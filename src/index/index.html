@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,37 +7,46 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div id="navbar">
-            <td id="imgTd"><img src="https://cdn-icons-png.flaticon.com/512/4849/4849108.png" alt="home button"></img></td>
-            <div id="dropdown1" class="dropdown">
-                <div id="ddhead1" class="ddhead">
-                    Nicht technische Codes
-                </div>
-            </div>
-            <div id="dropdown2" class="dropdown">
-                <div id="ddhead2" class="ddhead">
-                    Visuelle Codes
-                </div>
-            </div>
-            <div id="dropdown3" class="dropdown">
-                <div id="ddhead3" class="ddhead">
-                    Digitale Codes
-                </div>
-            </div>
-            <div id="dropdown4" class="dropdown">
-                <div id="ddhead4" class="ddhead">
-                    Fehlerkorrektur
-                </div>
-            </div>
-        </div>
-    </header>
-    <div id="content">
-
-    </div>
-    <footer>
-
-    </footer>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li id="homeBtnListElement">
+                <a href="../index/index.html"><img src="../images/home.png" alt="Home button" id="homeBtn"></a>
+            </li>
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
     <script src="./index.js"></script>
     <link rel="stylesheet" href="index.css">
 </body>
