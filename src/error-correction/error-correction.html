@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehlerkorrekur</title>
+</head>
+<body>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!--content goes here-->
+        <div class="contentPane">
+            <h1>Fehlerkorigierende Codes</h1>
+            Fehlerkorigierende Codes sind Codes, die in der Lage sind noch zu funktionieren, wenn einzelne Teile der Daten beschädigt.
+            Es lassen sich also mit Wissen darüber, wie die Daten codiert wurden die fehlerfreien codierten Daten, zurückzugewinnen.
+            
+            <h2>Notwendigkeit</h2>
+
+            Diese Codes sind dadurch relevant, dass es beim Übertragen oder Speichern von Daten, besonders in der Digitaltechnik, dazu kommen kann, dass Daten beschädigt werden.<br>
+            Dies kann beispielsweise durch elektromagnetisches Hintergrundrauschen bei der Übertragung oder sogenannte "bit-flips", bei denen einzelne gespeicherte bits ihren Wert aufgrund von elektromagnetischem Einfluss, wie durch kosmische Strahlung, verändern (0 => 1; 1 => 0).
+
+            <h2>Naiver Ansatz</h2>
+
+            (Die folgenden Beschreinungen gehen davon aus, dass Daten binär vorliegen und übertragen werden)<br>
+
+            Der wohl einfachste Ansatz ist es die Nutzdaten einmal zu kopieren und diese zusätzlich zu speichern bzw. anschließen zusätzlich zu versenden. Doch sollte man nun einen Unterschied zwischen beiden Daten erkennen, weiß man nicht ob die Originaldaten oder die Kopie korrekt ist.
+            Man könnte nun eine weitere Kopie erzeugen, sodass man bei einem Unterschied, den betroffenen Wert so zu setzen, dass der Wert der nur einmal vorliegt, von dem ersetzt wird, der zweimal vorkommt.
+            Für eine Wahrscheinlichkeit p, dass ein Bit falsch übertragen wird, liegt nun die Wahrscheinlichkeit, dass die Daten bereits korrekt sind oder korrigierbar sind (nur einer der drei Datenpunkten beinhaltet einen Fehler), bei <Math> (1-p)^3 + 3 * (1-p)^2 * p </Math>
+            Für eine recht hohe Wahrscheinlichkeit, dass es zu einem Fehler kommt, von 10%, wären die Daten an einem zu<br>
+            <b class="highlight">0,9^3 + 3 * 0,9^2 * 0,1 = 0,972 = 97,2%</b><br>
+            korrekt/korigierbar.
+
+            <h2>Parität</h2>
+
+            Die meisten fehlerkorrigierenden Codes verwenden Paritätsdaten, um Fehler zu finden und korigieren zu können.
+            Paritätdaten sind Daten, die zusätzlich erzeugt werden.
+            Da sie somit die originlen Daten aufblähen, versucht man möglichst wenige Paritätsdaten zu benötigen. In den meisten Fällen jedoch geht mit dem Reduzieren der Paritätsdatenmengen, eine geringere Korrekturfähigkeit einher, es können also nurnoch weniger Fehler korigiert werden.
+
+            Im oberen Beispiel des Kopierens entstehen betragen die Paritätsdaten 200% der Nutzdaten, was höchstineffizient sind.
+
+            Fehlerkorigierende Codes, wie der Hamming-Code, schaffen es diese auf 3% oder sogar noch weniger zu reduzieren.
+
+            Beispiele:
+            <br><br>
+            <!-- TODO: Table content-->
+            <table>
+                <tr>
+                    <td>Methode</td>
+                    <td>Nutzdatenmenge</td>
+                    <td>Paritätsdatenmenge</td>
+                    <td>Paritätsdatenmenge / Nutzdatenmenge</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+
+            <h2>Ergebnis</h2>
+            
+            Je nach dem, mit welchem Algorithmus und die Fehlerkorrekur durchgeführt wird gibt es verschiedene Mögliche Ergebnisse der Fehlerkorrekur:
+            <ul>
+                <li>Es wurden keine Fehler gefunden => Daten sind fehlerfrei</li>
+                <li>Es wurden Fehler gefunden, die jedoch repariert werden konnten => Daten sind fehlerfrei</li>
+                <li>Es wurden zu viele Fehler gefunden => Daten bleiben fehlerhaft</li>
+                <li>Die Daten sind zu beschädigt, als das der Algorithmus korrekt arbeiten könnte => Daten bleiben fehlerhaft</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>Quellen</td>
+                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
+                <td><a>Lizenz</a></td>
+            </tr>
+        </table>
+    </footer>
+    <script src="./error-correction.js"></script>
+    <link rel="stylesheet" href="error-correction.css">
+</body>
+</html>
