@@ -1,0 +1,23 @@
+{
+  "name": "tgi-website-codes-html",
+  "version": "1.0.0",
+  "description": "# tgi-website-codes-html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brokerwizard/tgi-website-codes-html.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brokerwizard/tgi-website-codes-html/issues"
+  },
+  "homepage": "https://github.com/brokerwizard/tgi-website-codes-html#readme",
+  "private": true,
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  }
+}
