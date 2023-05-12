@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehlerkorrekur in RAID</title>
+</head>
+<body>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!--content goes here-->
+        <div class="contentPane">
+            <h1>Fehlerkorrekur in RAID</h1>
+            RAID ("redundant array of independent disks") ist ein System zum Erstellen von Computer Speichern bestehend aus mehreren Speichermedien(Festplatten, SSDs, ...).<br>
+            Da beim Speichern von Daten in großem Maß, wie es bei RAID-Systemen meist der Fall ist, die Sicherheit dieser sehr wichtig ist, sind im RAID-Standart Fehlerkorrekurmöglichkeiten integriert.
+            In den verschiedenen RAID-Versionen, die man auch "RAID level" nennt, unterscheiden sich neben der Art, wie die Daten auf die verschiedenen Speichermedien verteilt werden auch in ihrer Fehlerkorrekur.
+
+            <h2>RAID 0</h2>
+            RAID 0 verteilt jediglich die Daten gleichmäßig auf mehrere Speichermedien, bietet jedoch keine Möglichkeit zur Korrektur von entstandenen Fehlern in den Daten.
+
+            <h2>RAID 1</h2>
+            Bei RAID 1 werden mindestes zwei Festplatten benötigt. Jeder Festplatte wird eine Weitere als sogenannte Spiegelfestplatte zugewiesen. Werden Daten gespeichert, so werden sie auf Beiden gespeichet.<br>
+            Sollte nun eine der Festplatten versagen, so kann der Controller des RAID-Systems weiterhin die Daten von der Spiegelfestplatte lesen. Um dann weiterhin eine Schutzkopie zu haben, muss die kaputte Festplatte ersetzt oder eine neue Spiegelfestplatte zugewiesen werden.
+            
+            <h2>RAID 5</h2>
+            RAID 5 benötigt mindestes 3 Festplatten, kann aber auch mit bis zu 16 arbeiten.
+            In einem Prozess namens "Striping" werden die Nutzdaten in etwa gleichgroße Blöcke aufgeteilt und auf die Festplatten verteilt. 
+            Auf einer weiteren Festplatte, auf der keiner der Blöcke gespeichert wird, werden Paritätsdaten gespeichert. Diese entstehen durch ein exklusives Oder der anderen Blöcke.
+            Werden verschiedene Blöcke nacheinander gespeichet, so werden die Paritätsdaten im Kreis rotierend auf einer anderen Festplatte gespeichert.
+
+            <!--Beispiel-->
+        </div>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>Quellen</td>
+                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
+                <td><a>Lizenz</a></td>
+            </tr>
+        </table>
+    </footer>
+    <script src="./raid.js"></script>
+    <link rel="stylesheet" href="raid.css">
+</body>
+</html>
