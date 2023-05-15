@@ -59,13 +59,50 @@
             Bei RAID 1 werden mindestes zwei Festplatten benötigt. Jeder Festplatte wird eine Weitere als sogenannte Spiegelfestplatte zugewiesen. Werden Daten gespeichert, so werden sie auf Beiden gespeichet.<br>
             Sollte nun eine der Festplatten versagen, so kann der Controller des RAID-Systems weiterhin die Daten von der Spiegelfestplatte lesen. Um dann weiterhin eine Schutzkopie zu haben, muss die kaputte Festplatte ersetzt oder eine neue Spiegelfestplatte zugewiesen werden.
             
+            <h2>RAID 2</h2>
+            Die Daten werden bei RAID 2 auf Bit-Ebene, anstatt auf Datenblock-Ebene, gleichmäßig über Speichermedien. zur Fehlerkorrektur wird in die Daten ein <a href="../hamming-codes/hamming-codes.html">Hamming-Code</a> verwendet.
+
             <h2>RAID 5</h2>
             RAID 5 benötigt mindestes 3 Festplatten, kann aber auch mit bis zu 16 arbeiten.
             In einem Prozess namens "Striping" werden die Nutzdaten in etwa gleichgroße Blöcke aufgeteilt und auf die Festplatten verteilt. 
             Auf einer weiteren Festplatte, auf der keiner der Blöcke gespeichert wird, werden Paritätsdaten gespeichert. Diese entstehen durch ein exklusives Oder der anderen Blöcke.
-            Werden verschiedene Blöcke nacheinander gespeichet, so werden die Paritätsdaten im Kreis rotierend auf einer anderen Festplatte gespeichert.
+            Werden verschiedene Dateien nacheinander gespeichet, so werden die Paritätsdaten im Kreis rotierend auf einer anderen Festplatte gespeichert. 
+            Dies soll verhindern, dass, wenn eine eigens dafür ausgewählte Festplatte, beschädigt wird alle Paritätsdaten darauf erneuert werden müssen.
+            <h3>Beispiel mit 4 Festplatten</h3>
 
-            <!--Beispiel-->
+            Die zu speichernde Datei wird in 3 gleichgroße Blöcke (A1-A3) aufgeteilt und auf die ersten drei Festplatten geschrieben.<br> Nun wird der Paritätsblock (Ap) Bit für Bit aus der Exklusiv-Oder Summe (A1 $ A2 $ A3) berechnet.<br><br>
+            Bsp.:
+            <table>
+                <tr>
+                    <th>A1</th>
+                    <th>A2</th>
+                    <th>A3</th>
+                    <th>Ap (A1 $ A2 $ A3)</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <br>
+            <img height="15%" src="/src/images/RAID_5.png" id="raid5_img">
+            <div class="credit">By en:User:Cburnett - This W3C-unspecified vector image was created with Inkscape ., CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1509158 (edited)</div>
+
+            <!--Interaktive Tabelle-->
         </div>
     </main>
     <footer>
