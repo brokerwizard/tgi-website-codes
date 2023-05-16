@@ -81,6 +81,7 @@ footer table {
     width: 90%;
     margin-left: 5%;
     margin-top: 5%;
+    margin-bottom: 1.5%;
     font-size: 18px;
     background-color: rgb(44, 44, 44);
     border: 8px solid rgb(44, 44, 44);
@@ -159,6 +160,17 @@ main ul {
     text-decoration: underline;
 }
 
+main input, main button {
+    background-color: rgb(66, 66, 66);
+    margin: 0.5%;
+    padding: 0.5%;
+    text-align: center;
+}
+
+main button {
+    width: 15%;
+}
+
 #raid5_img {
     text-align: left;
 }
@@ -171,4 +183,23 @@ main ul {
 .contentPane h3 {
     margin-top: 1.5%;
     margin-bottom: 0.75%;
+}
+
+.red {
+    color: red;
+    display: inline;
+}
+
+.magenta {
+    color: magenta;
+    display: inline;
+}
+
+.green {
+    color: green;
+    display: inline;
+}
+
+main p {
+    text-indent: 0.5%;
 }
