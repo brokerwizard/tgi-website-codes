@@ -150,3 +150,48 @@ main ul {
     color: rgb(70, 120, 230);
     text-decoration: underline;
 }
+
+.hammingCodeTableBig, .hammingCodeTableSmall {
+    text-align: center;
+}
+
+.hammingCodeTableBig {
+    font-size: xx-large;
+    height: 25vh;
+    width: 25vh;
+}
+
+.hammingCodeTableSmall {
+    margin-right: 10%;
+    float: left;
+    font-size: large;
+    height: 15vh;
+    width: 15vh;
+}
+
+.hammingCodeTableBig td, .hammingCodeTableSmall td {
+    display: table-cell;
+    height: 25%;
+    width: 25%
+}
+
+.clearFloat {
+    clear: both;
+}
+
+.contentPane .credit {
+    color: gray;
+    font-size: smaller;
+}
+
+.greenBg {
+    background-color: darkgreen;
+}
+
+.blueBg {
+    background-color: darkblue;
+}
+
+.redBg {
+    background-color: red;
+}

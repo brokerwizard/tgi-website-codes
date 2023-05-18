@@ -35,7 +35,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#">Fehlerkorrekur</a>
+                <a href="./hamming-codes/hamming-codes.html">Fehlerkorrekur</a>
                 <ul class="dropdown">
                     <li>1</li>
                     <li>2</li>
@@ -57,7 +57,7 @@
             Dies kann beispielsweise durch elektromagnetisches Hintergrundrauschen bei der Übertragung oder sogenannte "bit-flips", bei denen einzelne gespeicherte bits ihren Wert aufgrund von elektromagnetischem Einfluss, wie durch kosmische Strahlung, verändern (0 => 1; 1 => 0).
             Auch kommt es bei Speichermedien sicher irgendwann dazu, dass sie, aufgrund des normalen Gebrauches, kaputt geht.
 
-            <h2>Naiver Ansatz</h2>
+            <h2 id="naive">Naiver Ansatz</h2>
 
             (Die folgenden Beschreinungen gehen davon aus, dass Daten binär vorliegen und übertragen werden)<br>
 
@@ -86,16 +86,53 @@
                     <td>Methode</td>
                     <td>Nutzdatenmenge</td>
                     <td>Paritätsdatenmenge</td>
-                    <td>Paritätsdatenmenge / Nutzdatenmenge</td>
+                    <td>Nutzdatenmenge / Gesamtdaten</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><a href="./#naive">Naiver Ansatz: Kopien</a></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>33.3%</td>
+                </tr>
+                <tr>
+                    <td><a href="./raid/raid.html/#raid1">RAID 1</a></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>50%</td>
+                </tr>
+                <tr>
+                    <td><a href="./raid/raid.html/#raid5">RAID 5: 4 Festplatten</a></td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>75%</td>
+                </tr>
+                <tr>
+                    <td><a href="./raid/raid.html/#raid5">RAID 5: 8 Festplatten</a></td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>87.5%</td>
+                </tr>
+                <tr>
+                    <td><a href="./hamming-code/hamming-code.html">Hamming-Code: 16-Bit-Block</a></td>
+                    <td>11 bit</td>
+                    <td>5 bit</td>
+                    <td>68.8%</td>
+                </tr>
+                <tr>
+                    <td><a href="./hamming-code/hamming-code.html">Hamming-Code: 64-Bit-Block</a></td>
+                    <td>57 bit</td>
+                    <td>7 bit</td>
+                    <td>89%</td>
+                </tr>
+                <tr>
+                    <td><a href="./hamming-code/hamming-code.html">Hamming-Code: 256-Bit-Block</a></td>
+                    <td>247 bit</td>
+                    <td>9 bit</td>
+                    <td>96.5%</td>
                 </tr>
             </table>
-
+            <br>
+            Einige Einträge sind Einheitslos, da sie mit der Größe von Festplatten linear zusammenhängen.
 
             <h2>Ergebnis</h2>
             
@@ -106,6 +143,8 @@
                 <li>Es wurden zu viele Fehler gefunden => Daten bleiben fehlerhaft</li>
                 <li>Die Daten sind zu beschädigt, als das der Algorithmus korrekt arbeiten könnte => Daten bleiben fehlerhaft</li>
             </ul>
+
+            <br><br>~ Tobias
         </div>
     </main>
     <footer>
