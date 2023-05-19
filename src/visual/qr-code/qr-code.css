@@ -120,3 +120,33 @@ main {
     color: rgb(70, 120, 230);
     text-decoration: underline;
 }
+
+main table {
+    width: 80%;
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+main table td, main table th {
+    text-align: center;
+    border: 1px solid white;
+}
+
+.qr-code {
+    max-width: 200px;
+    margin: 10px;
+  }
+main input {
+    background-color: rgb(44, 44, 44);
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+main button {
+    background-color: rgb(22, 22, 22);
+    border-radius: 5px;
+    padding: 1%;
+    margin: 1.5%;
+    margin-left: 0%;
+    opacity: 75%;
+}  
