@@ -50,10 +50,10 @@
             <h1>DNA</h1><br>
 
 	        Die DNA (eng. deoxyribonucleic acid) oder DNS (deu. 
-            Desoxyribonukleinsäure) enthält die Erbinformationen für jede einselne 
-            jemals exestierende Art von Lebewesen, also Meereslebewesen, 
+            Desoxyribonukleinsäure) enthält die Erbinformationen für jede einzelne 
+            jemals existierende Art von Lebewesen, also Meereslebewesen, 
             Landlebewesen, Lebewesen aus der Luft, Pflanzen sowie DNA-Viren, auf 
-            der Erde. Bei einen Menschen wird die DNA täglich bei der 
+            der Erde. Bei einem Menschen wird die DNA täglich bei der 
             Zellteilung benötigt, da Zellen sich regenerieren müssen.
             Die DNA speichert die Erbinformationen in den Nukleinbasen 
             Adenin (A), Thymin (T), Guanin (G) und Cytosin (C). Die DNA besteht 
@@ -76,18 +76,37 @@
             Helix 0 = 0 und Helix 1 = 1. Damit dieser Code ohne Probleme halbiert 
             werden kann gibt es zwei Möglichkeiten ihn anzuordnen, nämlich: <br>
             <br>
-            erstens: Helix a + Base x + Helix b + Base y <br>
+            Erstens: Helix a + Base x + Helix b + Base y <br>
             oder <br>
-            zweitens: Base x + Helix a + Base y + Helix b.<br>
+            Zweitens: Base x + Helix a + Base y + Helix b.<br>
             <br>
-            Beispiel zu erstens: 	Helix 1 + Base A + Helix 0 + Base T -> 100001<br>
+            Beispiel zu Erstens: 	Helix 1 + Base A + Helix 0 + Base T -> 100001<br>
             <br>
-            Beispiel zu zweitens: 	Base G + Helix 0 + Base C + Helix 1 -> 110101<br>
+            Beispiel zu Zweitens: 	Base G + Helix 0 + Base C + Helix 1 -> 110101<br>
             <br>
             Somit kann mit nur den ersten oder letzten 3 Ziffern die jeweiligen
             anderen 3 Ziffern des Codes wiederherstellen.<br>
             <br>
-            [Übung zu den oben genannten Beispielen]<br>
+            <!---->
+            <h3>Anwendung der ersten Möglichkeit:</h3>
+            <table>
+                <tr>
+                    <th>Helix</th>
+                    <th>Base</th>
+                    <th>Helix</th>
+                    <th>Base</th>
+                    <th>Binärcode</th>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" class="table11"></td>
+                    <td><input type="text" maxlength="1" class="table12"></td>
+                    <td><input type="text" maxlength="1" class="table13"></td>
+                    <td><input type="text" maxlength="1" class="table14"></td>
+                    <td><input type="text" maxlength="6" class="table10"></td>
+                </tr>
+            </table>
+            <button id="genDNA1">Generiere DNA Darstellung</button>
+            <button id="genBin1">Generiere binäre Darstellung</button>
             <br>
             Man könnte also sagen, dass man die DNA als Speichermedium in der 
             Digitaltechnik verwenden kann. Hierbei stellen sich ein paar Fragen:<br>
@@ -98,18 +117,20 @@
             <br>
             Die DNA eines Menschen enthält umgerechnet ungefähr 200 GB Daten 
             das heißt, wenn man die DNA eines Menschen 5 mal aneinander hängt 
-            fehlen nurnoch ungefähr 24 GB zu einen vollen TB. Die menschliche 
+            fehlen nur noch ungefähr 24 GB zu einen vollen TB. Die menschliche 
             DNA liegt dabei in einem Zellkern, welcher in etwa 16µm groß ist, 
-            das heißt, dass diese 5 mal verlängerte DNA nichtmal 1% des Voluens 
+            das heißt, dass diese 5-mal verlängerte DNA nicht mal 1% des Volumens 
             einer 1TB Festplatte verbraucht. Somit wäre die DNA viel 
             platzeffizienter als die momentane Technologie. Warum verwenden 
             wir sie also noch nicht? Es ist einfach noch viel zu teuer um es 
             in jeden Computer zu verwenden. Es kostet in etwa 7.000$ um 2 MB 
             in DNA zu speichern. Bei der durchschnittlichen 
-            Internergeschwindlichkeit in Deutschland von 83,2 Mbit/s wären 
+            Internergeschwindigkeit in Deutschland von 83,2 Mbit/s wären 
             das 84.000$ für einen GB in etwas mehr wie 12 Sekunden. Es muss 
             also noch viel geforscht werden um die Kosteneffizienz zu 
             verringern und es somit für jeden Haushalt nutzbar zu machen.
+            <br><br>
+            ~ Fabian
         </div>
     </main>
     <footer>
@@ -121,6 +142,7 @@
             </tr>
         </table>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="./dna.js"></script>
     <link rel="stylesheet" href="dna.css">
 </body>
