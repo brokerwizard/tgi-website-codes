@@ -49,7 +49,7 @@
         <div class="contentPane">
             <h1>Hamming-Code</h1>
 
-            Der Hamming-Code, benannt nach seinem Erfinder Richard Wesley Hamming, ist ein fehlerkorigierender Code, der mittels Blöcken von Daten arbeitet, in welche geschickt Paritätsbits eingefügt werden.
+            Der Hamming-Code, benannt nach seinem Erfinder Richard Wesley Hamming, ist ein fehlerkorigierender Code, der mittels Blöcken von Daten arbeitet, in welche geschickt <a href="../error-correction.html#parity">Paritätsbits</a> eingefügt werden.
             
             <h2>Generierung eines Blockes</h2>
             
@@ -83,9 +83,9 @@
             </table>
             <div class="credit">4x4 Block aus 16 Bit</div>
             <br>
-            Die blauen Zellen stellen die Orte dar, an denen Paritätsbits gespeichert werden.<br>
-            Diese werden so gewählt, dass in die Anzahl der Bits, die 1 sind, in den verschiedenen Unterblöcken(siehe nächste Tabelle) gerade ist, was equivalent dazu ist ihn durch das Anwenden des Exklusiven Oders auf alle Bits des Unterblocks.<br>
-            Die grüne Zelle ist ein weiterer Paritätsbits. Dieser ergänzt jedoch den gesamten Block auf eine gerade Anzahl an Bits mit Wert 1.
+            Die blauen Zellen stellen die Orte dar, an denen <a href="../error-correction.html#parity">Paritätsbits</a> gespeichert werden.<br>
+            Diese werden so gewählt, dass in die Anzahl der Bits, die 1 sind, in den verschiedenen Unterblöcken(siehe nächste Tabelle) gerade ist, was equivalent dazu ist ihn durch das Anwenden des Exklusiven Oders (XOR) auf alle Bits des Unterblocks.<br>
+            Die grüne Zelle ist ein weiterer <a href="../error-correction.html#parity">Paritätsbits</a>. Dieser ergänzt jedoch den gesamten Block auf eine gerade Anzahl an Bits mit Wert 1.
             <br><br>
             <div class="hammingCodeTableCluster">
                 <table class="hammingCodeTableSmall">
@@ -198,7 +198,7 @@
 
             <h3>Beispiel:</h3>
             Ein 16 Bitblock, der somit 11 Bit an Daten speichern kann, soll die binäre Folge 110 1111 0000 gespeichert werden.<br>
-            Diese wird nun in die Bits, die keine Paritätsbits sind, aufgeteilt.<br>
+            Diese wird nun in die Bits, die keine <a href="../error-correction.html#parity">Paritätsbits</a> sind, aufgeteilt.<br>
             <br>
             <table class="hammingCodeTableSmall">
                 <tr>
@@ -271,8 +271,8 @@
             Um den Block nun auf Fehler zu überprüfen zählt man die Anzahl der Bits, die 1 sind, in jedem der Unterblöcke.
             Sollte die Anzahl gerade sein, so befindet sich kein Fehler in diesem Block.<br> Anderenfalls befindet er sich in diesem Unterblock.<br>
             Durch die gitterartige Anordnung der Unterblöcke, kann die Position des Bits, welches falsch ist bestimmt werden.
-            Wenn die Position jedoch 0, das Paritätsbit für den gesamten Block, ist,<br> liegt kein Fehler in den Nutzdaten vor oder er ist nicht korigierbar.<br>
-            Es kann auch herausgefunden werden, ob zwei Fehler vorliegen. Dies ist der Fall wenn dier Fehler auserhalb von Position 0 gefunden wurde und die Anzahl der Bits mit Wert 1 gerade ist.<br>
+            Wenn die Position jedoch 0 ist und  das <a href="../error-correction.html#parity">Paritätsbit</a> für den gesamten Block auch 0 ist,<br> liegt kein Fehler in den Nutzdaten vor.<br>
+            Es kann auch herausgefunden werden, ob zwei Fehler vorliegen. Dies ist der Fall wenn der Fehler außerhalb von Position 0 gefunden wurde und die Anzahl der Bits mit Wert 1 im gesamten Block gerade ist.<br>
             <br>
             <h3>Beispiel:</h3>
             <br>
@@ -450,15 +450,15 @@
 
             <h2>Limitierung der Fehlerkorrekur</h2>
             Da das Überprüfen der Unterblöcke immer ein Bit als Ergebnis hat, kann höchstens ein Fehler und seine Position gefunden werden, sodass der Fehler wieder korrigiert werden kann.<br>
-            Bei zwei Fehlern kann immerhin noch mittels des Paritätsbits für den gesamten Block festgestellt werden, dass zwei Fehler vorliegen. Dieser kann jedoch nicht mehr korrigiert werden.<br>
+            Bei zwei Fehlern kann immerhin noch mittels des <a href="../error-correction.html#parity">Paritätsbits</a> für den gesamten Block festgestellt werden, dass zwei Fehler vorliegen. Dieser kann jedoch nicht mehr korrigiert werden.<br>
             Sollte es mehr als zwei Fehler in einem Block geben, so funktioniert die Korrektur nicht mehr. Es werden nämlich Fehler an falschen Orten oder gar keine Fehler gefunden. Damit dies jedoch möglichst selten passiert, sollte die Blockgröße nich zu groß werden, um die Wahlscheinlichkeit von vielen Fehlern zu verringern.
 
-            <h2>Menge der Paritätsdaten</h2>
+            <h2>Menge der <a href="../error-correction.html#parity">Paritätsdaten</a></h2>
 
-            Die Anzahl der Paritätsbits k in einem Block der Größe N, wobei N eine Zweierpotenz ist, lässt sich wie folgt berechnen:
+            Die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> k in einem Block der Größe N, wobei N eine Zweierpotenz ist, lässt sich wie folgt berechnen:
             <div class="highlight">k = lb(N) + 1</div>
             Wo "lb" der binäre Logarithmus, also der Logarithmus zur Basis 2, ist.<br>
-            Da also die Anzahl der Paritätsbits sich nur logarithmisch erhöht, steigt der Anteil der Nutzdaten und somit die Effizienz zu, wenn die Blöcke größer werden.
+            Da also die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> sich nur logarithmisch erhöht, steigt der Anteil der Nutzdaten und somit die Effizienz, wenn die Blöcke größer werden.<br><br>
             <table>
                 <tr>
                     <th>Blockgröße N</th>

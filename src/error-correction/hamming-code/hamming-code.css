@@ -131,7 +131,8 @@ main table {
     border-collapse: collapse;
 }
 
-main table td {
+main table td, main table th {
+    text-align: center;
     border: 1px solid white;
 }
 

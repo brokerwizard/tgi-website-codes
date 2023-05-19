@@ -49,7 +49,7 @@
         <div class="contentPane">
             <h1>Fehlerkorrekur in RAID</h1>
             RAID ("redundant array of independent disks") ist ein System zum Erstellen von Computer Speichern bestehend aus mehreren Speichermedien(Festplatten, SSDs, ...).<br>
-            Da beim Speichern von Daten in großem Maß, wie es bei RAID-Systemen meist der Fall ist, die Sicherheit dieser sehr wichtig ist, sind im RAID-Standart Fehlerkorrekurmöglichkeiten integriert, die hauptsächlich gut funktionieren sollten ganze Festplatten ausfallen.
+            Da beim Speichern von Daten in großem Maß, wie es bei RAID-Systemen meist der Fall ist, die Sicherheit dieser sehr wichtig ist, sind im RAID-Standart Fehlerkorrekurmöglichkeiten integriert, die hauptsächlich gut funktionieren, wenn ganze Festplatten ausfallen sollten.
             In den verschiedenen RAID-Versionen, die man auch "RAID level" nennt, unterscheiden sich neben der Art, wie die Daten auf die verschiedenen Speichermedien verteilt werden auch in ihrer Fehlerkorrekur.
 
             <h2 id="raid0">RAID 0</h2>
@@ -65,7 +65,7 @@
             <h2 id="raid5">RAID 5</h2>
             RAID 5 benötigt mindestes 3 Festplatten, kann aber auch mit bis zu 16 arbeiten.
             In einem Prozess namens "Striping" werden die Nutzdaten in etwa gleichgroße Blöcke aufgeteilt und auf die Festplatten verteilt. 
-            Auf einer weiteren Festplatte, auf der keiner der Blöcke gespeichert wird, werden Paritätsdaten gespeichert. Diese entstehen durch ein exklusives Oder ($) der anderen Blöcke.
+            Auf einer weiteren Festplatte, auf der keiner der Blöcke gespeichert wird, werden Paritätsdaten gespeichert. Diese entstehen durch ein exklusives Oder (XOR, $) der anderen Blöcke.
             Werden verschiedene Dateien nacheinander gespeichet, so werden die Paritätsdaten im Kreis rotierend auf einer anderen Festplatte gespeichert. 
             Dies soll verhindern, dass, wenn eine eigens dafür ausgewählte Festplatte, beschädigt wird alle Paritätsdaten darauf erneuert werden müssen.
 

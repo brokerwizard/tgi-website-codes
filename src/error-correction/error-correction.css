@@ -129,7 +129,7 @@ main table {
     border-collapse: collapse;
 }
 
-main table td {
+main table td, main table th {
     border: 1px solid white;
 }
 
