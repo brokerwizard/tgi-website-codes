@@ -448,6 +448,20 @@
             <br>
             Wechselt man nun den Wert des gefundenen Bits, so erhält man den korrekten Block, in dem sich wieder die Bitfolge: 110 1111 0000 in den Datenbits befindet.
 
+            <h2>Positionierung der Paritätsbits</h2>
+            Da die Paritätsbits so positioniert sind, dass, wenn man ihre Position binär darstellt, die Position genau ein mal die Ziffer 1 beinhaltet, lässt sich die Suche nach einem Fehler auch einfacher mittels exklusiven Oders (XOR) bestimmen.<br>
+            Hierzu nimmt man die Position aller 1er-Bits und XORt sie in ihrer Binärdarstellung. Man erhält dann die Addresse genau so, wie beim durcharbeiten der verschiedenen Unterblöcke.<br>
+            <h3>Anhand des oberen Beispiels:</h3>
+            <p>0001</p>
+            <p>0011</p>
+            <p>0101</p>
+            <p>0111</p>
+            <p>1000</p>
+            <p>1010</p>
+            <p>1011</p>
+            <hr id="sumLine">
+            <p>1001 (= 9: Position des Fehlers)</p>
+
             <h2>Limitierung der Fehlerkorrekur</h2>
             Da das Überprüfen der Unterblöcke immer ein Bit als Ergebnis hat, kann höchstens ein Fehler und seine Position gefunden werden, sodass der Fehler wieder korrigiert werden kann.<br>
             Bei zwei Fehlern kann immerhin noch mittels des <a href="../error-correction.html#parity">Paritätsbits</a> für den gesamten Block festgestellt werden, dass zwei Fehler vorliegen. Dieser kann jedoch nicht mehr korrigiert werden.<br>
