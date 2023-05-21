@@ -24,7 +24,7 @@ $(function () {
     // QR-Code generation
     $('#qr-generate').click(() => {
         let targetURL = $('#content').val();
-        if (targetURL.length == 0) targetURL = "gs-offenburg.de"
+        if (targetURL.length == 0) targetURL = "https://www.gs-offenburg.de/"
         let finalURL =
             'https://chart.googleapis.com/chart?cht=qr&chl=' +
             htmlEncode(targetURL) +
