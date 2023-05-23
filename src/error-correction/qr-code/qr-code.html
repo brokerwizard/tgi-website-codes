@@ -50,7 +50,7 @@
             <h1>Fehlerkorrekur in QR-Codes</h1>
             In <a href="../../visual/qr-code.html">QR-Codes</a> wird Fehlerkorrekur verwendet, um sie gegen Verschmutzungen oder andere kleinere Beschädigungen widerständig zu machen.<br>
             Auch wird es dadurch möglich Logos oder ähliches im QR-Code zu platzieren, da beim Scannen die dadurch fehlenden Daten ersetzt werden können.<br>
-            Die Fehlerkorrekurdaten werden im Datenbereich des QR-Codes nach dem Ende der Nachricht gespeichert.<br>
+            Zur Fehlerkorrekur wird der <a href="#reed-solomon">Reed-Solomon Code</a> verwendet. Sie entstandenen Fehlerkorrekurdaten werden nach dem Ende der gespeicherten nutzdaten im Datenbereich des QR-Codes gespeichert. im <br>
             <br>
             <img src="../../images/schoolhomepageQR.png" alt="">
             <div class="credit">QR-Code zur Schulwebsite, in dem sich das Schullogo befindet</div>
@@ -105,7 +105,7 @@
             Dies liegt daran, dass hier so viele <a href="../error-correction.html#parity">Paritätsdaten</a> an die Nachricht angehängt wurden, dass sie nicht mehr in einen 21x21 QR-Code passen, sondern ein 23x23 QR-Code benötigt wird.
 
 
-            <h2>Reed-Solomon Code</h2>
+            <h2 id="reed-solomon">Reed-Solomon Code</h2>
             Der Reed-Solomon Code ist ein fehlerkorigirender Code, der mittels der Polynominterpolation über die Daten funktioniert.<br>
             Er nutzt es aus, dass für n Datenpunkte es genau eine Polynomfunktion n-1ten Grades gibt, die all diese schneidet. Von dieser Funktion werden eine beliebige Anzahl (k) weiterer Datenwerte abgelesen und als Paritätsdaten verwendet.
             Sind nun Datenpunkte verloren gegangen können sie wiederhergestellt werden, solange noch mindestens n der n + k Datenpunkte vorhanden sind. Dann auf diesen n Datenpunkten kann erneut die Polynomfunktion interpoliert werden.

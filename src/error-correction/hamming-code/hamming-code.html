@@ -53,7 +53,7 @@
             
             <h2>Generierung eines Blockes</h2>
             
-            Ein Block besteht aus einer Zweierpotenz(N^2) an Bits, die man gewöhnlich als NxN Block darstellt.<br>
+            Ein Block besteht aus einer Zweierpotenz(N<sup>2</sup>) an Bits, die man gewöhnlich als NxN Block darstellt.<br>
             <br>
             <table class="hammingCodeTableBig">
                 <tr>
@@ -470,8 +470,7 @@
             <h2>Menge der <a href="../error-correction.html#parity">Paritätsdaten</a></h2>
 
             Die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> k in einem Block der Größe N, wobei N eine Zweierpotenz ist, lässt sich wie folgt berechnen:
-            <div class="highlight">k = lb(N) + 1</div>
-            Wo "lb" der binäre Logarithmus, also der Logarithmus zur Basis 2, ist.<br>
+            <div class="highlight">k = log<sub>2</sub>(N) + 1</div>
             Da also die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> sich nur logarithmisch erhöht, steigt der Anteil der Nutzdaten und somit die Effizienz, wenn die Blöcke größer werden.<br><br>
             <table>
                 <tr>
