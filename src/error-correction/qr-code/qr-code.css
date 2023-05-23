@@ -138,3 +138,35 @@ main ul {
     color: rgb(70, 120, 230);
     text-decoration: underline;
 }
+
+.contentPane .credit {
+    color: gray;
+    font-size: smaller;
+}
+
+main table {
+    width: 80%;
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+main table td {
+    width: 10%;
+    border: 1px solid white;
+    text-align: center;
+}
+
+main table th {
+    width: 10%;
+    border: 1px solid white;
+    border-bottom-width: 3px;
+}
+
+.contentPane h3 {
+    margin-top: 1.5%;
+    margin-bottom: 0.75%;
+}
+
+.imageCluster img {
+    margin-right: 7%;
+}
