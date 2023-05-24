@@ -110,11 +110,13 @@
             Sollte nun die zweite Festplatte ausfallen, so lassen sich die auf ihr gespeicherten Daten mittels den anderen Festplatten berechnen.<br>
             Da nun gilt: A2 = A1 $ A3 $ Ap<br>
             <br>
-            Probiere es aus:<br>
-            <p>-boolsche Werte (0; 1) für A1 bis A3 eingeben</p>
-            <p>-den Paritätsbit generieren lassen</p>
-            <p>-einen der vier Werte entfernen</p>
-            <p>=>Der fehlende Bit kann ersetzt werden.</p><br>
+            Probiere es aus:
+            <ul>
+            <li>boolsche Werte (0; 1) für A1 bis A3 eingeben</li>
+            <li>den Paritätsbit generieren lassen</li>
+            <li>einen der vier Werte entfernen</li>
+            <li>=>Der fehlende Bit kann ersetzt werden.</li>
+            </ul><br>
             <table>
                 <tr>
                     <th><div class="green">A1</div></th>
@@ -130,7 +132,7 @@
                 </tr>
             </table>
             <button onclick="genParity()">Generiere Paritätsbit</button>
-            <button onclick="repairData()">Reperiere fehlende Daten</button>
+            <button onclick="repairData()">Repariere fehlende Daten</button>
             <div id="resultDiv"></div>
             <br>
             In der Praxis würde dies Bit für Bit wiederholt werden, um die gesamten Daten wiederherzustellen.<br>
