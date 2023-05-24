@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kommazahlen</title>
+</head>
+<body>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="./hamming-codes/hamming-codes.html">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!--content goes here-->
+        <div class="contentPane">
+            <h1>Kommazahlen in der Digitaltechnik</h1>
+            Da man für viele gängige Berechnungen Kommazahlen benötigt, ist es auch nötig diese in Computern darzustellen und mit ihnen zu rechnen.<br>
+            Hierfür werden Fließkommazahlen verwendet. Fließkomma heißen sie, da Teile der Darstellung dafür verantwortlich sind das Komma zu "verschieben".
+
+            <h2>Wissenschaftliche Schreibweise</h2>
+            Die Fließkommazahldarstellung ähnelt der wissenschaftlichen Schreibweise in ihrem Aufbau.
+            Dabei werden sehr große oder sehr kleine Zahlen als Kombination einer Kommazahl (r; normalerweise zwischen 1 und 10) und einer 10er-Potenz (10<sup>n</sup>) repräsentiert.<br>
+            Beispiele:<br>
+            <p>1.5 * 10<sup>8</sup> = 150,000,000</p>
+            <p>2.735 * 10<sup>-5</sup> = 0.00002735</p>
+            <p>4.35 * 10<sup>14</sup> = 435,000,000,000,000</p>
+
+            <h2>Darstellung</h2>
+            Analog zur wissenschaftlichen Schreifweise für Zahlen verwenden Fließkommazahlen eine Mantisse, das ist die Ziffernstelle, und einen Exponenten.
+            Da jedoch im Binärsystem gearbeitet wird, ist die Basis nicht 10 sondern 2. Da man nicht selbständig Kommapunkte setzten kann, wird die Mantisse so interpretiert, als würde es sich nach der ersten Ziffer befinden.<br>
+            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standarts">Standart</a> ab. Eine beisielhafte Darstellung wäre:<br>
+            <br>
+            <table>
+                <tr>
+                    <td class="blueBg">Vorzeichen</td>
+                    <td class="redBg">-16</td>
+                    <td class="redBg">8</td>
+                    <td class="redBg">4</td>
+                    <td class="redBg">2</td>
+                    <td class="redBg">1</td>
+                    <td class="greenBg">9</td>
+                    <td class="greenBg">8</td>
+                    <td class="greenBg">7</td>
+                    <td class="greenBg">6</td>
+                    <td class="greenBg">5</td>
+                    <td class="greenBg">4</td>
+                    <td class="greenBg">3</td>
+                    <td class="greenBg">2</td>
+                    <td class="greenBg">1</td>
+                    <td class="greenBg">0</td>
+                </tr>
+                <tr>
+                    <td class="blueBg">0</td>
+                    <td class="redBg">0</td>
+                    <td class="redBg">0</td>
+                    <td class="redBg">0</td>
+                    <td class="redBg">0</td>
+                    <td class="redBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                    <td class="greenBg">0</td>
+                </tr>
+            </table>
+
+            <h2 id="standarts">Standarts</h2>
+
+            <br><br>~ Tobias
+        </div>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>Quellen</td>
+                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
+                <td><a>Lizenz</a></td>
+            </tr>
+        </table>
+    </footer>
+    <script src="./floating-point.js"></script>
+    <link rel="stylesheet" href="floating-point.css">
+</body>
+</html>
