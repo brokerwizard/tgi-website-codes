@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehlerkorrekur in RAID</title>
+</head>
+<body>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!--content goes here-->
+        <div class="contentPane">
+            <h1>Fehlerkorrekur in RAID</h1>
+            RAID ("redundant array of independent disks") ist ein System zum Erstellen von Computer Speichern bestehend aus mehreren Speichermedien(Festplatten, SSDs, ...).<br>
+            Da beim Speichern von Daten in großem Maß, wie es bei RAID-Systemen meist der Fall ist, die Sicherheit dieser sehr wichtig ist, sind im RAID-Standart Fehlerkorrekurmöglichkeiten integriert, die hauptsächlich gut funktionieren, wenn ganze Festplatten ausfallen sollten.
+            In den verschiedenen RAID-Versionen, die man auch "RAID level" nennt, unterscheiden sich neben der Art, wie die Daten auf die verschiedenen Speichermedien verteilt werden auch in ihrer Fehlerkorrekur.
+
+            <h2 id="raid0">RAID 0</h2>
+            RAID 0 verteilt jediglich die Daten gleichmäßig auf mehrere Speichermedien, bietet jedoch keine Möglichkeit zur Korrektur von entstandenen Fehlern in den Daten.
+
+            <h2 id="raid1">RAID 1</h2>
+            Bei RAID 1 werden mindestes zwei Festplatten benötigt. Jeder Festplatte wird eine Weitere als sogenannte Spiegelfestplatte zugewiesen. Werden Daten gespeichert, so werden sie auf Beiden gespeichet.<br>
+            Sollte nun eine der Festplatten versagen, so kann der Controller des RAID-Systems weiterhin die Daten von der Spiegelfestplatte lesen. Um dann weiterhin eine Schutzkopie zu haben, muss die kaputte Festplatte ersetzt oder eine neue Spiegelfestplatte zugewiesen werden.
+            
+            <h2 id="raid2">RAID 2</h2>
+            Die Daten werden bei RAID 2 auf Bit-Ebene, anstatt auf Datenblock-Ebene, gleichmäßig über Speichermedien. zur Fehlerkorrektur wird in die Daten ein <a href="../hamming-code/hamming-code.html">Hamming-Code</a> verwendet.
+
+            <h2 id="raid5">RAID 5</h2>
+            RAID 5 benötigt mindestes 3 Festplatten, kann aber auch mit bis zu 16 arbeiten.
+            In einem Prozess namens "Striping" werden die Nutzdaten in etwa gleichgroße Blöcke aufgeteilt und auf die Festplatten verteilt. 
+            Auf einer weiteren Festplatte, auf der keiner der Blöcke gespeichert wird, werden Paritätsdaten gespeichert. Diese entstehen durch ein exklusives Oder (XOR, $) der anderen Blöcke.
+            Werden verschiedene Dateien nacheinander gespeichet, so werden die Paritätsdaten im Kreis rotierend auf einer anderen Festplatte gespeichert. 
+            Dies soll verhindern, dass, wenn eine eigens dafür ausgewählte Festplatte, beschädigt wird alle Paritätsdaten darauf erneuert werden müssen.
+
+            <h3>Beispiel mit 4 Festplatten</h3>
+
+            Die zu speichernde Datei wird in 3 gleichgroße Blöcke (A1-A3) aufgeteilt und auf die ersten drei Festplatten geschrieben.<br> Nun wird der Paritätsblock (Ap) Bit für Bit aus der Exklusiv-Oder Summe (A1 $ A2 $ A3) berechnet.<br><br>
+            Bsp.: 250 als 8-bit Zahl: <div class="green">10</div> <div class="red">111</div> <div class="magenta">110</div> (vorne wird mit einer weiteren 0 aufgefüllt, damit die Blöcke gleich groß sind<br><br>
+            <table>
+                <tr>
+                    <th>Bit Nr.</th>
+                    <th><div class="green">A1</div></th>
+                    <th><div class="red">A2</div></th>
+                    <th><div class="magenta">A3</div></th>
+                    <th>Ap (A1 $ A2 $ A3)</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <br>
+            <img height="15%" src="/src/images/RAID_5.png" id="raid5_img">
+            <div class="credit">RAID 5 Blockaufteilung    By en:User:Cburnett - This W3C-unspecified vector image was created with Inkscape ., CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1509158 (edited)</div>
+            <br>
+            Sollte nun die zweite Festplatte ausfallen, so lassen sich die auf ihr gespeicherten Daten mittels den anderen Festplatten berechnen.<br>
+            Da nun gilt: A2 = A1 $ A3 $ Ap<br>
+            <br>
+            Probiere es aus:<br>
+            <p>-boolsche Werte (0; 1) für A1 bis A3 eingeben</p>
+            <p>-den Paritätsbit generieren lassen</p>
+            <p>-einen der vier Werte entfernen</p>
+            <p>=>Der fehlende Bit kann ersetzt werden.</p><br>
+            <table>
+                <tr>
+                    <th><div class="green">A1</div></th>
+                    <th><div class="red">A2</div></th>
+                    <th><div class="magenta">A3</div></th>
+                    <th>Ap</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="inputText1" maxlength="1"></td>
+                    <td><input type="text" id="inputText2"maxlength="1"></td>
+                    <td><input type="text" id="inputText3"maxlength="1"></td>
+                    <td><input type="text" id="inputTextp"maxlength="1"></td>
+                </tr>
+            </table>
+            <button onclick="genParity()">Generiere Paritätsbit</button>
+            <button onclick="repairData()">Reperiere fehlende Daten</button>
+            <div id="resultDiv"></div>
+            <br>
+            In der Praxis würde dies Bit für Bit wiederholt werden, um die gesamten Daten wiederherzustellen.<br>
+            Werden weitere Datenblöcke B, C, ... gespeichert, so werden bei ihnen die Paritätsblöcke auf Disk 2, Disk 1 (siehe Grafik) gespeichert. Block E würde wieder auf Disk 3 gespeichert werden.
+
+            <h2>Weitere RAID-level</h2>
+            Es gibt noch weitere RAID-level: 3, 4, 6 und 7, sowie 10, welches aus den Prinzipien von RAID 0 und RAID 1 zusammengesetzt ist.
+            Dennoch ist RAID 5 die am meisten verwendete RAID-Art.
+
+            <br><br>~ Tobias
+        </div>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>Quellen</td>
+                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
+                <td><a>Lizenz</a></td>
+            </tr>
+        </table>
+    </footer>
+    <script src="./raid.js"></script>
+    <link rel="stylesheet" href="raid.css">
+</body>
+</html>

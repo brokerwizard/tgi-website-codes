@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehlerkorrekur</title>
+</head>
+<body>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="./hamming-codes/hamming-codes.html">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!--content goes here-->
+        <div class="contentPane">
+            <h1>Fehlerkorrigierende Codes</h1>
+            Fehlerkorrigierende Codes sind Codes, die in der Lage sind noch zu funktionieren, wenn einzelne Teile der Daten beschädigt sind.
+            Es lassen sich also mit Wissen darüber, wie die Daten codiert wurden die fehlerfreien codierten Daten, zurückgewinnen.
+            
+            <h2>Notwendigkeit</h2>
+
+            Diese Codes sind dadurch relevant, dass es beim Übertragen oder Speichern von Daten, besonders in der Digitaltechnik, dazu kommen kann, dass Daten beschädigt werden.<br>
+            Dies kann beispielsweise durch elektromagnetisches Hintergrundrauschen bei der Übertragung oder sogenannte "bit-flips", bei denen einzelne gespeicherte Bits ihren Wert aufgrund von elektromagnetischem Einfluss, wie durch kosmische Strahlung, verändern (0 => 1; 1 => 0).
+            Auch kommt es bei Speichermedien sicher irgendwann dazu, dass sie aufgrund des normalen Gebrauches, kaputt geht.
+
+            <h2 id="naive">Naiver Ansatz</h2>
+
+            (Die folgenden Beschreinungen gehen davon aus, dass Daten binär vorliegen und übertragen werden)<br>
+
+            Der wohl einfachste Ansatz ist es die Nutzdaten einmal zu kopieren und diese zusätzlich zu speichern bzw. anschließen zusätzlich zu versenden. Doch sollte man nun einen Unterschied zwischen beiden Daten erkennen, weiß man nicht ob die Originaldaten oder die Kopie korrekt ist.
+            Man könnte nun eine weitere Kopie erzeugen, sodass man bei einem Unterschied den betroffenen Wert so setzt, dass der Wert, der nur einmal vorliegt, von dem ersetzt wird, der zweimal vorkommt.
+            Für eine Wahrscheinlichkeit p, dass ein Bit falsch übertragen wird, liegt nun die Wahrscheinlichkeit, dass die Daten bereits korrekt sind oder korrigierbar sind (nur einer der drei Datenpunkten beinhaltet einen Fehler), bei (1-p)<sup>3</sup> + 3 * (1-p)<sup>2</sup> * p </Math>
+            Für eine recht hohe Wahrscheinlichkeit, dass es zu einem Fehler kommt, von 10%, wären die Daten an einem zu<br>
+            <b class="highlight">0,9<sup>3</sup> + 3 * 0,9<sup>2</sup> * 0,1 = 0,972 = 97,2%</b><br>
+            korrekt/korigierbar.
+
+            <h2 id="parity">Parität</h2>
+
+            Die meisten fehlerkorrigierenden Codes verwenden Paritätsdaten, um Fehler zu finden und korigieren zu können.
+            Paritätdaten sind Daten, die zusätzlich erzeugt werden.
+            Da sie somit die originalen Daten vergrößern, versucht man möglichst wenige Paritätsdaten zu benötigen. In den meisten Fällen jedoch geht mit dem Reduzieren der Paritätsdatenmengen eine geringere Korrekturfähigkeit einher. Es können also nurnoch weniger Fehler korigiert werden.
+
+            Im oberen Beispiel des Kopierens betragen die Paritätsdaten 200% der Nutzdaten, was höchst ineffizient ist.
+
+            Fehlerkorrigierende Codes, wie der Hamming-Code, schaffen es diese auf 3% oder sogar noch weniger zu reduzieren.
+
+            Beispiele:
+            <br><br>
+            <!-- TODO: Table content-->
+            <table>
+                <tr>
+                    <td>Methode</td>
+                    <td>Nutzdatenmenge</td>
+                    <td>Paritätsdatenmenge</td>
+                    <td>Nutzdatenmenge / Gesamtdaten</td>
+                </tr>
+                <tr>
+                    <td><a href="./#naive">Naiver Ansatz: Kopien</a></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>33.3%</td>
+                </tr>
+                <tr>
+                    <td><a href="./raid/raid.html/#raid1">RAID 1</a></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>50%</td>
+                </tr>
+                <tr>
+                    <td><a href="./raid/raid.html/#raid5">RAID 5: 4 Festplatten</a></td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>75%</td>
+                </tr>
+                <tr>
+                    <td><a href="./raid/raid.html/#raid5">RAID 5: 8 Festplatten</a></td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>87.5%</td>
+                </tr>
+                <tr>
+                    <td><a href="./hamming-code/hamming-code.html">Hamming-Code: 16-Bit-Block</a></td>
+                    <td>11 bit</td>
+                    <td>5 bit</td>
+                    <td>68.8%</td>
+                </tr>
+                <tr>
+                    <td><a href="./hamming-code/hamming-code.html">Hamming-Code: 64-Bit-Block</a></td>
+                    <td>57 bit</td>
+                    <td>7 bit</td>
+                    <td>89%</td>
+                </tr>
+                <tr>
+                    <td><a href="./hamming-code/hamming-code.html">Hamming-Code: 256-Bit-Block</a></td>
+                    <td>247 bit</td>
+                    <td>9 bit</td>
+                    <td>96.5%</td>
+                </tr>
+            </table>
+            <br>
+            Einige Einträge sind Einheitslos, da es bei diesen Methoden keine festen Größen gibt, sodass die Werte nur ein allgemeines Verhältnis angeben.
+
+            <h2>Ergebnis</h2>
+            
+            Je nach dem, mit welchem Algorithmus die Fehlerkorrekur durchgeführt wird, gibt es verschiedene mögliche Ergebnisse der Fehlerkorrekur:
+            <ul>
+                <li>Es wurden keine Fehler gefunden => Daten sind fehlerfrei</li>
+                <li>Es wurden Fehler gefunden, die jedoch repariert werden konnten => Daten sind fehlerfrei</li>
+                <li>Es wurden zu viele Fehler gefunden => Daten bleiben fehlerhaft</li>
+                <li>Die Daten sind zu beschädigt, als das der Algorithmus korrekt arbeiten könnte => Daten bleiben fehlerhaft</li>
+            </ul>
+
+            <br><br>~ Tobias
+        </div>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>Quellen</td>
+                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
+                <td><a>Lizenz</a></td>
+            </tr>
+        </table>
+    </footer>
+    <script src="./error-correction.js"></script>
+    <link rel="stylesheet" href="error-correction.css">
+</body>
+</html>

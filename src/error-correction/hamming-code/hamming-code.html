@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamming-Code</title>
+</head>
+<body>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!--content goes here-->
+        <div class="contentPane">
+            <h1>Hamming-Code</h1>
+
+            Der Hamming-Code, benannt nach seinem Erfinder Richard Wesley Hamming, ist ein fehlerkorigierender Code, der mittels Blöcken von Daten arbeitet, in welche geschickt <a href="../error-correction.html#parity">Paritätsbits</a> eingefügt werden.
+            
+            <h2>Generierung eines Blockes</h2>
+            
+            Ein Block besteht aus einer Zweierpotenz(N<sup>2</sup>) an Bits, die man gewöhnlich als NxN Block darstellt.<br>
+            <br>
+            <table class="hammingCodeTableBig">
+                <tr>
+                    <td class="greenBg">0</td>
+                    <td class="blueBg">1</td>
+                    <td class="blueBg">2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td class="blueBg">4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td class="blueBg">8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                </tr>
+            </table>
+            <div class="credit">4x4 Block aus 16 Bit</div>
+            <br>
+            Die blauen Zellen stellen die Orte dar, an denen <a href="../error-correction.html#parity">Paritätsbits</a> gespeichert werden.<br>
+            Diese werden so gewählt, dass in die Anzahl der Bits, die 1 sind, in den verschiedenen Unterblöcken(siehe nächste Tabelle) gerade ist, was equivalent dazu ist ihn durch das Anwenden des Exklusiven Oders (XOR) auf alle Bits des Unterblocks.<br>
+            Die grüne Zelle ist ein weiterer <a href="../error-correction.html#parity">Paritätsbits</a>. Dieser ergänzt jedoch den gesamten Block auf eine gerade Anzahl an Bits mit Wert 1.
+            <br><br>
+            <div class="hammingCodeTableCluster">
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td class="greenBg">1</td>
+                        <td>2</td>
+                        <td class="blueBg">3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="blueBg">5</td>
+                        <td>6</td>
+                        <td class="blueBg">7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td class="blueBg">9</td>
+                        <td>10</td>
+                        <td class="blueBg">11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td class="blueBg">13</td>
+                        <td>14</td>
+                        <td class="blueBg">15</td>
+                    </tr>
+                </table>
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="greenBg">2</td>
+                        <td class="blueBg">3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td class="blueBg">6</td>
+                        <td class="blueBg">7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td class="blueBg">10</td>
+                        <td class="blueBg">11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td class="blueBg">14</td>
+                        <td class="blueBg">15</td>
+                    </tr>
+                </table>
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td class="greenBg">4</td>
+                        <td class="blueBg">5</td>
+                        <td class="blueBg">6</td>
+                        <td class="blueBg">7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td class="blueBg">12</td>
+                        <td class="blueBg">13</td>
+                        <td class="blueBg">14</td>
+                        <td class="blueBg">15</td>
+                    </tr>
+                </table>
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td class="greenBg">8</td>
+                        <td class="blueBg">9</td>
+                        <td class="blueBg">10</td>
+                        <td class="blueBg">11</td>
+                    </tr>
+                    <tr>
+                        <td class="blueBg">12</td>
+                        <td class="blueBg">13</td>
+                        <td class="blueBg">14</td>
+                        <td class="blueBg">15</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clearFloat"></div>
+            <div class="credit">Unterblöcke für 1, 2, 4 und 8</div>
+
+            <h3>Beispiel:</h3>
+            Ein 16 Bitblock, der somit 11 Bit an Daten speichern kann, soll die binäre Folge 110 1111 0000 gespeichert werden.<br>
+            Diese wird nun in die Bits, die keine <a href="../error-correction.html#parity">Paritätsbits</a> sind, aufgeteilt.<br>
+            <br>
+            <table class="hammingCodeTableSmall">
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <div class="clearFloat"></div>
+            <div class="credit">Block mit eingesetzten Werten in den Nutzdatenbits</div>
+            <br>
+            Nun werden die Felder B bis E berechnet:
+            <p>B = 1 $ 1 $ 1 $ 1 $ 1 $ 0 $ 0 = 1</p>
+            <p>C = 1 $ 0 $ 1 $ 1 $ 1 $ 0 $ 0 = 0</p>
+            <p>D = 1 $ 0 $ 1 $ 0 $ 0 $ 0 $ 0 = 0</p>
+            <p>E = 1 $ 1 $ 1 $ 0 $ 0 $ 0 $ 0 = 1</p>
+            Und anschließend lässt sich A berchnen:
+            <p>A = 0, da 8 Einsen vorhanden sind und schon gerade ist.</p>
+            <br>
+            <table class="hammingCodeTableBig">
+                <tr>
+                    <td class="greenBg">0</td>
+                    <td class="blueBg">1</td>
+                    <td class="blueBg">0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="blueBg">0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td class="blueBg">1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <br>
+            Der Code ist nun fertig.
+
+            <h2>Fehler finden</h2>
+
+            Um den Block nun auf Fehler zu überprüfen zählt man die Anzahl der Bits, die 1 sind, in jedem der Unterblöcke.
+            Sollte die Anzahl gerade sein, so befindet sich kein Fehler in diesem Block.<br> Anderenfalls befindet er sich in diesem Unterblock.<br>
+            Durch die gitterartige Anordnung der Unterblöcke, kann die Position des Bits, welches falsch ist bestimmt werden.
+            Wenn die Position jedoch 0 ist und  das <a href="../error-correction.html#parity">Paritätsbit</a> für den gesamten Block auch 0 ist,<br> liegt kein Fehler in den Nutzdaten vor.<br>
+            Es kann auch herausgefunden werden, ob zwei Fehler vorliegen. Dies ist der Fall wenn der Fehler außerhalb von Position 0 gefunden wurde und die Anzahl der Bits mit Wert 1 im gesamten Block gerade ist.<br>
+            <br>
+            <h3>Beispiel:</h3>
+            <br>
+            <table class="hammingCodeTableBig">
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td class="redBg">0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <div class="credit">Block mit Fehler (rot)</div>
+            <br>
+            <div class="hammingCodeTableCluster">
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">1</td>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">1</td>
+                    </tr>
+                    <tr>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">1</td>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">1</td>
+                    </tr>
+                    <tr>
+                        <td class="blueBg">1</td>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">1</td>
+                        <td class="blueBg">1</td>
+                    </tr>
+                    <tr>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">0</td>
+                        <td class="blueBg">0</td>
+                    </tr>
+                </table>
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td class="blueBg">1</td>
+                        <td>0</td>
+                        <td class="blueBg">1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td class="blueBg">1</td>
+                        <td>0</td>
+                        <td class="blueBg">1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="blueBg">0</td>
+                        <td>1</td>
+                        <td class="blueBg">1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td class="blueBg">0</td>
+                        <td>0</td>
+                        <td class="blueBg">0</td>
+                    </tr>
+                </table>
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td class="blueBg">1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td class="blueBg">1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="blueBg">0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td class="blueBg">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td class="blueBg">1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="blueBg">0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+                <table class="hammingCodeTableSmall">
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="blueBg">0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clearFloat"></div>
+            <div class="credit">Bits, in denen der Fehler noch sein könnte (blau) vor dem Untersuchen und nach Untersuchung der Unterlöcke 1, 2, 4 und 8</div>
+            <br>
+            <p>Befindet sich der Fehler in Unterblock 1: 7 1er-Bits => Ungerade => Ja</p>
+            <p>Befindet sich der Fehler in Unterblock 2: 4 1er-Bits => Gerade => Nein</p>
+            <p>Befindet sich der Fehler in Unterblock 4: 2 1er-Bits => Gerade => Nein</p>
+            <p>Befindet sich der Fehler in Unterblock 8: 3 1er-Bits => Ungerade => Ja</p>
+            <br>
+            <p>Summe aller 1er-Bits: 7 => Ungerade => Nur ein Fehler</p>
+            <br>
+            Wechselt man nun den Wert des gefundenen Bits, so erhält man den korrekten Block, in dem sich wieder die Bitfolge: 110 1111 0000 in den Datenbits befindet.
+
+            <h2>Positionierung der Paritätsbits</h2>
+            Da die Paritätsbits so positioniert sind, dass, wenn man ihre Position binär darstellt, die Position genau ein mal die Ziffer 1 beinhaltet, lässt sich die Suche nach einem Fehler auch einfacher mittels exklusiven Oders (XOR) bestimmen.<br>
+            Hierzu nimmt man die Position aller 1er-Bits und XORt sie in ihrer Binärdarstellung. Man erhält dann die Addresse genau so, wie beim durcharbeiten der verschiedenen Unterblöcke.<br>
+            <h3>Anhand des oberen Beispiels:</h3>
+            <p>0001</p>
+            <p>0011</p>
+            <p>0101</p>
+            <p>0111</p>
+            <p>1000</p>
+            <p>1010</p>
+            <p>1011</p>
+            <hr id="sumLine">
+            <p>1001 (= 9: Position des Fehlers)</p>
+
+            <h2>Limitierung der Fehlerkorrekur</h2>
+            Da das Überprüfen der Unterblöcke immer ein Bit als Ergebnis hat, kann höchstens ein Fehler und seine Position gefunden werden, sodass der Fehler wieder korrigiert werden kann.<br>
+            Bei zwei Fehlern kann immerhin noch mittels des <a href="../error-correction.html#parity">Paritätsbits</a> für den gesamten Block festgestellt werden, dass zwei Fehler vorliegen. Dieser kann jedoch nicht mehr korrigiert werden.<br>
+            Sollte es mehr als zwei Fehler in einem Block geben, so funktioniert die Korrektur nicht mehr. Es werden nämlich Fehler an falschen Orten oder gar keine Fehler gefunden. Damit dies jedoch möglichst selten passiert, sollte die Blockgröße nich zu groß werden, um die Wahlscheinlichkeit von vielen Fehlern zu verringern.
+
+            <h2>Menge der <a href="../error-correction.html#parity">Paritätsdaten</a></h2>
+
+            Die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> k in einem Block der Größe N, wobei N eine Zweierpotenz ist, lässt sich wie folgt berechnen:
+            <div class="highlight">k = log<sub>2</sub>(N) + 1</div>
+            Da also die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> sich nur logarithmisch erhöht, steigt der Anteil der Nutzdaten und somit die Effizienz, wenn die Blöcke größer werden.<br><br>
+            <table>
+                <tr>
+                    <th>Blockgröße N</th>
+                    <th>Paritätsdatenmenge k</th>
+                    <th>Nutzdatenmenge n</th>
+                    <th>Effizienz (n / N)</th>
+                </tr>
+                <tr>
+                    <td>4 bit</td>
+                    <td>3 bit</td>
+                    <td>1 bit</td>
+                    <td>25%</td>
+                </tr>
+                <tr>
+                    <td>16 bit</td>
+                    <td>5 bit</td>
+                    <td>11 bit</td>
+                    <td>68.8%</td>
+                </tr>
+                <tr>
+                    <td>64 bit</td>
+                    <td>7 bit</td>
+                    <td>57 bit</td>
+                    <td>89%</td>
+                </tr>
+                <tr>
+                    <td>256 bit</td>
+                    <td>9 bit</td>
+                    <td>247 bit</td>
+                    <td>96.5%</td>
+                </tr>
+            </table>
+            <br><br>
+            ~ Tobias
+        </div>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>Quellen</td>
+                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
+                <td><a>Lizenz</a></td>
+            </tr>
+        </table>
+    </footer>
+    <script src="./hamming-code.js"></script>
+    <link rel="stylesheet" href="hamming-code.css">
+</body>
+</html>
