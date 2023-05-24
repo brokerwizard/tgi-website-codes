@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+</head>
+<body>
+    <nav>
+        <ul id="navbarList">
+            <!--img-->
+            <li>
+                <a href="#">Nicht technische Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Visuelle Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Digitale Codes</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Fehlerkorrekur</a>
+                <ul class="dropdown">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!--content goes here-->
+        <div class="contentPane">
+            <h1>DNA</h1><br>
+
+	        Die DNA (eng. deoxyribonucleic acid) oder DNS (deu. 
+            Desoxyribonukleinsäure) enthält die Erbinformationen für jede einzelne 
+            jemals existierende Art von Lebewesen, also Meereslebewesen, 
+            Landlebewesen, Lebewesen aus der Luft, Pflanzen sowie DNA-Viren, auf 
+            der Erde. Bei einem Menschen wird die DNA täglich bei der 
+            Zellteilung benötigt, da Zellen sich regenerieren müssen.
+            Die DNA speichert die Erbinformationen in den Nukleinbasen 
+            Adenin (A), Thymin (T), Guanin (G) und Cytosin (C). Die DNA besteht 
+            aus zwei Helices, die mit Basenpaaren verbunden sind. <br>
+            <br>
+            Diese Paare können nur in den folgenden Gruppierungen vorkommen: 
+            Adenin + Thymin, Thymin + Adenin, Cytosin + Guanin und 
+            Guanin + Cytosin. Es können also 4 Paare in beliebiger Reihenfolge 
+            vorkommen, da sich diese DNA in Zellen, welche sich teilen, befindet, 
+            wird diese auch geteilt. <br>
+            <br>
+            Die zwei Helices werden also an ihren Verbindungsstücken, den Basenpaaren, 
+            geteilt, da diese eine vorgegeben Paarung haben, muss nur bekannt 
+            sein, ob es sich um Helix 0 oder 1 handelt, somit kann die DNA 
+            vollständige wiederherstellt werden. Vereinfacht gesagt besteht die DNA 
+            aus einzelnen 6 Bit <a href="../digital/binary-code">Binärcodes</a>, da 
+            die Basen als binäre Zahlen dargestellt werden können: A = 00, T = 01, 
+            C = 10 und G = 11. Somit sind schon 4 Bits belegt für jedes Paar. In 
+            den übrigen zwei Stellen ist die Nummer der Helix angegeben: 
+            Helix 0 = 0 und Helix 1 = 1. Damit dieser Code ohne Probleme halbiert 
+            werden kann gibt es zwei Möglichkeiten ihn anzuordnen, nämlich: <br>
+            <br>
+            Erstens: Helix a + Base x + Helix b + Base y <br>
+            oder <br>
+            Zweitens: Base x + Helix a + Base y + Helix b.<br>
+            <br>
+            Beispiel zu Erstens: 	Helix 1 + Base A + Helix 0 + Base T -> 100001<br>
+            <br>
+            Beispiel zu Zweitens: 	Base G + Helix 0 + Base C + Helix 1 -> 110101<br>
+            <br>
+            Somit kann mit nur den ersten oder letzten 3 Ziffern die jeweiligen
+            anderen 3 Ziffern des Codes wiederherstellen.<br>
+            <br>
+            <!---->
+            <h3>Anwendung der ersten Möglichkeit:</h3>
+            <table>
+                <tr>
+                    <th>Helix</th>
+                    <th>Base</th>
+                    <th>Helix</th>
+                    <th>Base</th>
+                    <th>Binärcode</th>
+                </tr>
+                <tr>
+                    <td><input type="text" maxlength="1" class="table11"></td>
+                    <td><input type="text" maxlength="1" class="table12"></td>
+                    <td><input type="text" maxlength="1" class="table13"></td>
+                    <td><input type="text" maxlength="1" class="table14"></td>
+                    <td><input type="text" maxlength="6" class="table10"></td>
+                </tr>
+            </table>
+            <button id="genDNA1">Generiere DNA Darstellung</button>
+            <button id="genBin1">Generiere binäre Darstellung</button>
+            <br>
+            Man könnte also sagen, dass man die DNA als Speichermedium in der 
+            Digitaltechnik verwenden kann. Hierbei stellen sich ein paar Fragen:<br>
+            
+            1. Wie viel kann die DNA speichern?<br>
+            2. Wie viel Platz verbraucht sie für das Speichern?<br>
+            3. Ist dies kosteneffizient?<br>
+            <br>
+            Die DNA eines Menschen enthält umgerechnet ungefähr 200 GB Daten 
+            das heißt, wenn man die DNA eines Menschen 5 mal aneinander hängt 
+            fehlen nur noch ungefähr 24 GB zu einen vollen TB. Die menschliche 
+            DNA liegt dabei in einem Zellkern, welcher in etwa 16µm groß ist, 
+            das heißt, dass diese 5-mal verlängerte DNA nicht mal 1% des Volumens 
+            einer 1TB Festplatte verbraucht. Somit wäre die DNA viel 
+            platzeffizienter als die momentane Technologie. Warum verwenden 
+            wir sie also noch nicht? Es ist einfach noch viel zu teuer um es 
+            in jeden Computer zu verwenden. Es kostet in etwa 7.000$ um 2 MB 
+            in DNA zu speichern. Bei der durchschnittlichen 
+            Internergeschwindigkeit in Deutschland von 83,2 Mbit/s wären 
+            das 84.000$ für einen GB in etwas mehr wie 12 Sekunden. Es muss 
+            also noch viel geforscht werden um die Kosteneffizienz zu 
+            verringern und es somit für jeden Haushalt nutzbar zu machen.
+            <br><br>
+            ~ Fabian
+        </div>
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td>Quellen</td>
+                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
+                <td><a>Lizenz</a></td>
+            </tr>
+        </table>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="./dna.js"></script>
+    <link rel="stylesheet" href="dna.css">
+</body>
+</html>
