@@ -115,3 +115,8 @@ main {
     border-radius: 20px;
     padding: 1.5%;
 }
+
+.contentPane a {
+    color: rgb(70, 120, 230);
+    text-decoration: underline;
+}
