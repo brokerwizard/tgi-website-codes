@@ -62,7 +62,7 @@
             <h2>Darstellung</h2>
             Analog zur wissenschaftlichen Schreifweise für Zahlen verwenden Fließkommazahlen eine Mantisse, das ist die Ziffernstelle, und einen Exponenten.
             Da jedoch im Binärsystem gearbeitet wird, ist die Basis nicht 10 sondern 2. Da man nicht selbständig Kommapunkte setzten kann, wird die Mantisse so interpretiert, als würde es sich nach der ersten Ziffer befinden.<br>
-            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standarts">Standart</a> ab. Eine beispielhafte Darstellung (orientiert an der Fließkommazahl halber Genauigkeit des IEEE 754), die 16-bit umfassen würde, könnte in etwa so aussehen:<br>
+            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standards">Standard</a> ab. Eine beispielhafte Darstellung (orientiert an der Fließkommazahl halber Genauigkeit des IEEE 754), die 16-bit umfassen würde, könnte in etwa so aussehen:<br>
             1 Bit gibt das Vorzeichen (0: +; 1: -) an. Dann geben 5 Bits in 2er-Komplementdarstellung den Exponenten zwischen -16 und 15 an. Am Ende befindet sich die Mantisse, in der die verbleibende positive Binärzahl, als hätte sie einem Komma nach dem ersten Bit, gespeichert wird.<br> 
             <br>
             <table>
@@ -109,7 +109,7 @@
             <button type="button" onClick="genFloat()">Erzeuge Fließkommazahl</button>
             <div id="genInfo"><div style="color: white">1.109375 * 2<sup>3</sup> = 8.875</div></div>
             <br>
-            <div id="mantisse1">Da das erste Bit der Mantisse immer 1 ist, wird in vielen Standarts dieses Bit weggelassen, sodass die Mantisse mit dem 1/2 Bit beginnt.</div>
+            <div id="mantisse1">Da das erste Bit der Mantisse immer 1 ist, wird in vielen Standards dieses Bit weggelassen, sodass die Mantisse mit dem 1/2 Bit beginnt.</div>
             <h2>Limitierung</h2>
 
             Wenn man versucht große oder sehr genaue Zahlen, wie es im oberen Beispiel 30000 oder 0.0003, versucht zu speichern fällt auf, das die Wirklich gespeicherten Werte abweichen (29984; 0.0002999305725097656).
@@ -121,7 +121,7 @@
             <img src="../../images/floatingPointDistribution.png" width="80%">
             <div class="credit">Visualisierung der Darstellbaren Werte als Fließkommazahl; By Joeleoj123 - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95784506</div>
 
-            <h2 id="standarts">Standarts</h2>
+            <h2 id="standards">Standards</h2>
             Die heutzutage Üblichen Fließkommazahldarstellungen sind in der IEEE 754 Norm definiert.
             <table>
                 <tr>

@@ -47,7 +47,33 @@
     <main>
         <!--content goes here-->
         <div class="contentPane">
-            
+            <h1>Text</h1>
+            Da wir typischerweise Sprache/Schrift, mit ihren verschiedenen Buchstaben und Zeichen, benutzen um Sachverhalte darzustellen ist es nötig, dass Computer diese Speichern und mit ihnen arbeiten können.
+            Computer arbeiten jedoch nur mit wahr/falsch bzw. Zahlen, weshalb es hierfür notwendig ist Codes zu haben.
+
+            <h2>ASCII</h2>
+            ASCII (American Standard Code for Information Interchange) gilt als die Grundlage für die meisten Textcodierungen.<br>
+            Er weist den 7-bit langen Zahlen, also 2<sup>7</sup> = 128 Werten, Zeichen, die im amerikanischen Raum verwendet wurden zu.
+            Dies sind Groß- und Kleinbuchstaben, Satzzeichen, sowie einfache Sonderzeichen und Steuerungscodes, die zur Koordination des Datenverkehrs verwendet wurden bzw. verwendet verwendet werden können.<br>
+            Überblick:<br>
+            <br>
+            <img src="../../images/ASCII_table.png" width="30%">
+            <div class="credit">ASCII Tabelle: links die rechten vier Bit; oben die linken drei</div><br>
+            Die Werte für 0-31, sowie 127, sind Steuerungscodes.<br>
+            Wie man jedoch sieht fehlen bereits für die deutsche Sprache Buchstaben, wie Ä, Ö, ü und ß.
+
+            <h3>Erweiterung</h3>
+            Weil das klassische ASCII nur 7 der 8 Bit in einem Byte nutzt wurden verschiedene Erweiterungen eingeführt, um weitere im normalen ASCII fehlenden Zeichen darstellen zu können.
+            Hierbei wurden jedoch so unterschiedliche Variationen erschaffen, dass es keine allgemeine ASCII-Erweiterung gibt.
+
+            <h2>Unicode</h2>
+            Um das Problem der fehlenden Zeichen zu beheben entstand der Unicode-Standard.
+            Das Ziel hierbei ist es möglichst alle Zeichen, was neben Buchstaben, Schriftzeichen und Sonderzeichen auch Symbole, wie Emojis beinhaltet.
+            Die Zeichen wurden Zahlenwerten zugewiesen, sodass man mit den Zahlenwerten diese repräsentieren kann.<br>
+            Standardmäßig gibt man die Codes der Zeichen hexadezimal, mit einer Mindestlänge von 4 Ziffern, an. Um zu makieren, dass es sich um ein Unicodesymbol handelt, wird der Präfix "U+" verwendet.<br>
+            U+00DF entspricht "ß".<br>
+
+            <h2>UTF</h2>
 
             <br><br>~ Tobias
         </div>
