@@ -62,7 +62,8 @@
             <h2>Darstellung</h2>
             Analog zur wissenschaftlichen Schreifweise für Zahlen verwenden Fließkommazahlen eine Mantisse, das ist die Ziffernstelle, und einen Exponenten.
             Da jedoch im Binärsystem gearbeitet wird, ist die Basis nicht 10 sondern 2. Da man nicht selbständig Kommapunkte setzten kann, wird die Mantisse so interpretiert, als würde es sich nach der ersten Ziffer befinden.<br>
-            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standarts">Standart</a> ab. Eine beisielhafte Darstellung wäre:<br>
+            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standarts">Standart</a> ab. Eine beispielhafte Darstellung (orientiert an der Fließkommazahl halber Genauigkeit des IEEE 754), die 16-bit umfassen würde, könnte in etwa so aussehen:<br>
+            1 Bit gibt das Vorzeichen (0: +; 1: -) an. Dann geben 5 Bits in 2er-Komplementdarstellung den Exponenten zwischen -16 und 15 an. Am Ende befindet sich die Mantisse, in der die verbleibende positive Binärzahl, als hätte sie einem Komma nach dem ersten Bit, gespeichert wird.<br> 
             <br>
             <table>
                 <tr>
@@ -72,36 +73,40 @@
                     <td class="redBg">4</td>
                     <td class="redBg">2</td>
                     <td class="redBg">1</td>
-                    <td class="greenBg">9</td>
-                    <td class="greenBg">8</td>
-                    <td class="greenBg">7</td>
-                    <td class="greenBg">6</td>
-                    <td class="greenBg">5</td>
-                    <td class="greenBg">4</td>
-                    <td class="greenBg">3</td>
-                    <td class="greenBg">2</td>
                     <td class="greenBg">1</td>
-                    <td class="greenBg">0</td>
+                    <td class="greenBg">1/2</td>
+                    <td class="greenBg">1/4</td>
+                    <td class="greenBg">1/8</td>
+                    <td class="greenBg">1/16</td>
+                    <td class="greenBg">1/32</td>
+                    <td class="greenBg">1/64</td>
+                    <td class="greenBg">1/128</td>
+                    <td class="greenBg">1/256</td>
+                    <td class="greenBg">1/512</td>
                 </tr>
                 <tr>
-                    <td class="blueBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
+                    <td class="blueBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
                 </tr>
             </table>
+            Eingabe einer dezimalen Kommazahl:<br>
+            <input type="text" id="inputNum">
+            <button type="button" onClick="genFloat()">Erzeuge Fließkommazahl</button>
+            <div id="genInfo"></div>
 
             <h2 id="standarts">Standarts</h2>
 
