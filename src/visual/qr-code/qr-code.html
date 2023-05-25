@@ -58,7 +58,8 @@
         </div>
         <div class="contentPane">
             <h1>Verwendungszwecke:</h1><br>
-            QR-Codes wurden in den letzen Jahren immer belieber und häufiger verwendet, dies sind mit 10 der häufigsten verwendenten Anwendungszwecke.
+            QR-Codes wurden in den letzen Jahren immer belieber und häufiger verwendet, dies sind mit 10 der häufigsten
+            verwendenten Anwendungszwecke.
             <ul>
                 <li>Freigabe von WLAN- & Netzwerkzugriff</li>
                 <li>Banner und Werbung</li>
@@ -90,13 +91,65 @@
                 <li><b>Japan</b> Japanese Industrial Standard JIS X 0510</li>
                 <li><b>China</b> hinese National Standard GB/T 18284</li>
                 <li><b>Südkorea</b> Korean National Standard KSXISOIEC 18004</li>
-                <li><b>Vietnam</b>  Vietnamese National Standard TCVN 7322</li>
+                <li><b>Vietnam</b> Vietnamese National Standard TCVN 7322</li>
                 <li><b>Singapur</b> Singapore National Standard SS 543 (’09)</li>
-                
             </ul>
         </div>
         <div class="contentPane">
-            <h1>Enkondirung & Dekodirung:</h1><br>
+            <h1>Enkodirung:</h1><br>
+            Die Enkodirung ist der Hintergrundsprozess für die Generierung des QR-Codes, er läuft folgendermassen ab:<br>
+            <ul>
+                <li>Wählen Sie den QR-Code-Typ und die Version aus. Wie viele Datenmodule verwendet werden können, hängt
+                    von der Version ab und welche Art von Daten gespeichert werden können.
+                    Unterteilen Sie die Daten je nach Typ in Segmente. Wenn es sich um alphanumerische Daten handelt,
+                    kann jedes Segment bis zu elf Bit an Informationen enthalten.
+                </li>
+                <li>
+                    Zu jedem Segment fügen Sie Bits zur Fehlerkorrektur und Auffüllung hinzu. Wenn der QR-Code
+                    beschädigt oder verzerrt ist, hilft die Fehlerkorrektur bei der Wiederherstellung der Daten, und die
+                    Auffüllbits füllen ungenutzten Platz im Segment auf.
+                </li>
+                <li>
+                    Ordnen Sie die Segmente in einem Datenstrom nach einem bestimmten Muster an. Die Version des
+                    QR-Codes bestimmt das Muster, um sicherzustellen, dass die Datenmodule gleichmäßig über den Code
+                    verteilt sind.
+                </li>
+                <li>
+                    Das Muster basiert auf der Version des QR-Codes und stellt sicher, dass die Datenmodule gleichmäßig
+                    über den Code verteilt sind.
+                </li>
+                <li>
+                    Fügen Sie Informationen über das Format und die Version in den Datenstrom ein. Der Typ, die Version
+                    und das Maskenmuster des QR-Codes werden in den Formatinformationen angegeben. Die Anzahl der
+                    Datenmodule, die für den QR-Code verwendet werden, wird in den Versionsinformationen angegeben.
+                </li>
+                <li>
+                    Die Datenmodule entsprechend den Positionsmarkierungen platzieren und die Ruhezone hinzufügen, um
+                    den endgültigen QR-Code zu erstellen.
+                </li>
+                <li>
+                    Entfernen Sie alle Fehlerkorrektur- und Auffüllteile. Wenn der QR-Code beschädigt oder verzerrt ist, hilft die Fehlerkorrektur bei der Wiederherstellung der Daten, und die Auffüllbits füllen den ungenutzten Platz im Segment auf.
+                </li>
+                <li>Konvertieren Sie die Segmente in ihre ursprüngliche Form gemäß dem Typ, den Sie ausgewählt haben. Wenn es sich um alphanumerische Daten handelt, entspricht jedes Bit einem Zeichen in einer festgelegten Tabelle.</li>
+            </ul>
+        </div>
+        <div class="contentPane">
+            <h1>Dekodirung:</h1>
+            Das Dekodieren ist der Hintergrundsprozess für das Lesen eines QR-Codes, er läuft folgendermassen ab:<br>
+            <ul>
+                <li>Durch die Suche nach den drei Positionsmarkierungen und der Ruhezone können Sie den QR-Code finden.
+                    Die Positionsmarkierungen sind große Quadrate mit einem inneren und einem äußeren Auge, die dem
+                    Scanner ermöglichen, die Ausrichtung und Größe des Codes zu bestimmen.</li>
+                <li>
+                    Lesen Sie in der Nähe der Positionsmarkierungen die Format- und Versionsinformationen von den
+                    Datenmodulen ab. Der Typ, die Version und das Maskenmuster des QR-Codes werden in den
+                    Formatinformationen angegeben. Die Anzahl der Datenmodule, die für den QR-Code verwendet werden,
+                    wird in den Versionsinformationen angegeben.
+                </li>
+                <li>Um den Kodierungsprozess umzukehren, wenden Sie das Maskenmuster auf die Datenmodule an. Ein Maskenmuster ist eine Reihe von Regeln, die verwendet werden, um zu bestimmen, ob ein Datenmodul weiß oder schwarz sein soll. Das Maskenmuster hilft bei der Vermeidung kontrastreicher oder kontrastärmerer QR-Codes, die das Scannen erschweren könnten.</li>
+                <li>Ordnen Sie die Datenmodule nach einem bestimmten Muster in einen Datenstrom. Das Muster basiert auf der Version des QR-Codes, um sicherzustellen, dass die Datenmodule gleichmäßig über den Code verteilt sind.</li>
+                <li>Unterteilen Sie den Datenstrom je nach Typ in Segmente. Wenn es sich um alphanumerische Daten handelt, kann jedes Segment bis zu elf Bit an Informationen enthalten.</li>
+            </ul>
         </div>
         <div class="contentPane">
             <h1>Lesen:</h1><br>
@@ -115,10 +168,14 @@
                 <li>Der Text, welcher zu einem Qr-Code Codiert werden soll.</li>
                 <li>Der gewünschte Grad der Fehlerkorrektur:</li>
             </ul>
-            <br><h3>Beispiel:</h3>
-            Der standardmässige QR-Code unseres QR-Code generators ist <em>https://chart.googleapis.com/chart?cht=qr&chl=https://www.gs-offenburg.de/&chs=177x177&chld=L|0</em>.
-            <br>Der gewünschte zu codierenten Text kann nach <em>&chl</em> gefunden werden, also <em>https://www.gs-offenburg.de/</em>.
-            Das gewünschte Fehlerkorrektur-Level kann nach <em>&chld</em> gefunden werden, hierbei ist dies L also Low mit 07%.
+            <br>
+            <h3>Beispiel:</h3>
+            Der standardmässige QR-Code unseres QR-Code generators ist
+            <em>https://chart.googleapis.com/chart?cht=qr&chl=https://www.gs-offenburg.de/&chs=177x177&chld=L|0</em>.
+            <br>Der gewünschte zu codierenten Text kann nach <em>&chl</em> gefunden werden, also
+            <em>https://www.gs-offenburg.de/</em>.
+            Das gewünschte Fehlerkorrektur-Level kann nach <em>&chld</em> gefunden werden, hierbei ist dies L also Low
+            mit 07%.
             <!--Input-->
             <div class="qr-code-holder">
                 <img src="https://chart.googleapis.com/chart?cht=qr&chl=https://www.gs-offenburg.de/&chs=177x177&chld=L|0"
@@ -130,7 +187,7 @@
                     QR-Code Adresse:
                 </label>
                 <div>
-                    <input type="text" size="60" maxlength="60" id="content" placeholder="https://gs-offenburg.de"/>
+                    <input type="text" size="60" maxlength="60" id="content" placeholder="https://gs-offenburg.de" />
                 </div>
                 <div class="button-holder">
                     <button type="button" id="qr-generate">
@@ -139,7 +196,7 @@
                     <button type="button" id="qr-download">
                         Herunterladen
                     </button>
-                    <button type="button" id ="qr-reset">
+                    <button type="button" id="qr-reset">
                         Zurücksetzen
                     </button>
                 </div>
@@ -156,8 +213,10 @@
             </ol>
             <a href="../../error-correction/qr-code/qr-code.html">Genauere Erklärung</a>
             <br>
-            Die maximale Informationsgehaltskapazität des QR-Codes hängt von der Größe des QR-Codes und des Fehlerkorrektur-Levels ab.
-            So zum Beispiel kann ein 177x177 großer QR-Code mit einem Fehlerkorrektur-Level von L (07%) bis zu 23.648 Bits (2.956 Byte) speicher.
+            Die maximale Informationsgehaltskapazität des QR-Codes hängt von der Größe des QR-Codes und des
+            Fehlerkorrektur-Levels ab.
+            So zum Beispiel kann ein 177x177 großer QR-Code mit einem Fehlerkorrektur-Level von L (07%) bis zu 23.648
+            Bits (2.956 Byte) speicher.
         </div>
         <div class="contentPane">~ Raphael</div>
     </main>
