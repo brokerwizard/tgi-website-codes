@@ -107,6 +107,10 @@ main {
     width: 90%
 }
 
+main ul {
+    padding-left: 20px;
+}
+
 .contentPane {
     margin-top: 2%;
     margin-bottom: 1%;
@@ -150,3 +154,6 @@ main button {
     margin-left: 0%;
     opacity: 75%;
 }  
+em {
+    opacity: 50%;
+}

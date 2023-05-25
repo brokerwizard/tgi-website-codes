@@ -49,24 +49,76 @@
         <!--content goes here-->
         <div class="contentPane">
             <h1>Erklärung und Entstehungshintergrund:</h1><br>
-            Qr-Codes (Quick Response Code) ist ein zweidimensionaler Code welcher aus einer quadratischen Matrix mit
+            QR-Codes (Quick Response Code) ist ein zweidimensionaler Code, welcher aus einer quadratischen Matrix mit
             schwarzen und weißen Quadraten/Punkten besteht.<br>
             Diese Matrix wird Module genannt und stellt die kodierten binären Daten dar.<br>
             Die Bekannten drei Makierungen in den vier äusseren Ecken, geben die Oriertierung vor.<br>
-            Erstmalig wurde der Qr-Code 1994 von der TochterFirma Denso Wave entwickelt welche zu Toyota gehört,<br>
+            Erstmalig wurde der QR-Code 1994 von der TochterFirma Denso Wave entwickelt welche zu Toyota gehört,<br>
             um die Markierung von Baugruppen und Komponenten für die Logistik diese Globalplayers zu vereinfachen.
         </div>
         <div class="contentPane">
-            <h1>Verwendungszwecke:</h1>
+            <h1>Verwendungszwecke:</h1><br>
+            QR-Codes wurden in den letzen Jahren immer belieber und häufiger verwendet, dies sind mit 10 der häufigsten verwendenten Anwendungszwecke.
+            <ul>
+                <li>Freigabe von WLAN- & Netzwerkzugriff</li>
+                <li>Banner und Werbung</li>
+                <li>Tickets</li>
+                <li>vCards und Visitenkarten</li>
+                <li>Digitale Karten/Menus</li>
+                <li>Hinweise für Produkte & Lebensmittel</li>
+                <li>E-learning</li>
+                <li>Verfolgung von Nachrichten und Informationen</li>
+                <li>Hintergrundinformation von Objekten im z.B. Museum</li>
+                <li>Zur Authentizierung z.b. 2FA</li>
+            </ul>
         </div>
         <div class="contentPane">
             <h1>Standards:</h1><br>
-            Es gibt mehr Qr-Code standards, der Unterschied liegt meist in der Codierung und der visuelen
+            Es gibt mehr QR-Code standards, der Unterschied liegt meist in der Codierung und der visuelen
             Darstellung.<br>
+            <ol>
+                <li>10. März 1995 – Europäisches Patent Nummer EP0672994</li>
+                <li>Oktober 1997 – AIM (Association for Automatic Identification and Mobility) International</li>
+                <li>Januar 1999 – JIS X 0510</li>
+                <li>Juni 2000 – ISO/IEC 18004:2000 (zurückgezogen)</li>
+                <li>November 2004 – Erweiterung des JIS X 0510 um Micro-QR-Code</li>
+                <li>1. September 2006 – ISO/IEC 18004:2006 Definiert QR-Code 2005</li>
+            </ol>
+            <br>
+            In eingigen Ländern wurden bestimmte QR-Code standards als die Nationalen Standards festgelegt.
+            <ul>
+                <li><b>Japan</b> Japanese Industrial Standard JIS X 0510</li>
+                <li><b>China</b> hinese National Standard GB/T 18284</li>
+                <li><b>Südkorea</b> Korean National Standard KSXISOIEC 18004</li>
+                <li><b>Vietnam</b>  Vietnamese National Standard TCVN 7322</li>
+                <li><b>Singapur</b> Singapore National Standard SS 543 (’09)</li>
+                
+            </ul>
+        </div>
+        <div class="contentPane">
+            <h1>Enkondirung & Dekodirung:</h1><br>
+        </div>
+        <div class="contentPane">
+            <h1>Lesen:</h1><br>
+            Das Lesen eines QR-Codes besteht auf zwei Schritte:
+            <ol>
+                <li>Das Generieren eines Bildes der QR-Codierten Datei, z.B mit Hilfer einer Kamera.</li>
+                <li>Das umgewandelte Bild und seine codierten Daten in Textform dekodieren.</li>
+            </ol>
+            <img src="../../images/Taggingprozess.jpg">
         </div>
         <div class="contentPane">
             <!-- QR-Code Generierer -->
             <h1>Generieren:</h1><br>
+            Bevor ein QR-Code generiert werden kann werden zwei Information benötigt:
+            <ul>
+                <li>Der Text, welcher zu einem Qr-Code Codiert werden soll.</li>
+                <li>Der gewünschte Grad der Fehlerkorrektur:</li>
+            </ul>
+            <br><h3>Beispiel:</h3>
+            Der standardmässige QR-Code unseres QR-Code generators ist <em>https://chart.googleapis.com/chart?cht=qr&chl=https://www.gs-offenburg.de/&chs=177x177&chld=L|0</em>.
+            <br>Der gewünschte zu codierenten Text kann nach <em>&chl</em> gefunden werden, also <em>https://www.gs-offenburg.de/</em>.
+            Das gewünschte Fehlerkorrektur-Level kann nach <em>&chld</em> gefunden werden, hierbei ist dies L also Low mit 07%.
             <!--Input-->
             <div class="qr-code-holder">
                 <img src="https://chart.googleapis.com/chart?cht=qr&chl=https://www.gs-offenburg.de/&chs=177x177&chld=L|0"
@@ -75,7 +127,7 @@
             <!--Output-->
             <div class="interaction-holder">
                 <label for="content">
-                    Qr-Code Adresse:
+                    QR-Code Adresse:
                 </label>
                 <div>
                     <input type="text" size="60" maxlength="60" id="content" placeholder="https://gs-offenburg.de"/>
@@ -94,14 +146,20 @@
             </div>
         </div>
         <div class="contentPane">
-            <h1>Enkondirung & Dekodirung:</h1>
+            <h1>Fehlerkorrektur & Speichergrößen:</h1><br>
+            Ein QR-Code kann mit 4 unterschiedlich Stuffen an Fehlerkorrektur verwendet werden.<br>
+            <ol>
+                <li><b>Low</b>, 07% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+                <li><b>Medium</b>, 15% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+                <li><b>Quartile</b>, 25% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+                <li><b>High</b>, 30% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+            </ol>
+            <a href="../../error-correction/qr-code/qr-code.html">Genauere Erklärung</a>
+            <br>
+            Die maximale Informationsgehaltskapazität des QR-Codes hängt von der Größe des QR-Codes und des Fehlerkorrektur-Levels ab.
+            So zum Beispiel kann ein 177x177 großer QR-Code mit einem Fehlerkorrektur-Level von L (07%) bis zu 23.648 Bits (2.956 Byte) speicher.
         </div>
-        <div class="contentPane">
-            <h1>Fehlerkorrektur & Speichergrößen:</h1>
-        </div>
-        <div class="contentPane">
-            <h1>Lesen:</h1>
-        </div>
+        <div class="contentPane">~ Raphael</div>
     </main>
     <footer>
         <table>

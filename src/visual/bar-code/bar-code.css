@@ -107,6 +107,11 @@ main {
     width: 90%
 }
 
+main ul {
+    padding-left: 20px;
+}
+
+
 .contentPane {
     margin-top: 2%;
     margin-bottom: 1%;
@@ -119,4 +124,8 @@ main {
 .contentPane a {
     color: rgb(70, 120, 230);
     text-decoration: underline;
+}
+
+img {
+    
 }
