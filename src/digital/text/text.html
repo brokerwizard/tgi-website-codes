@@ -48,19 +48,19 @@
         <!--content goes here-->
         <div class="contentPane">
             <h1>Text</h1>
-            Da wir typischerweise Sprache/Schrift, mit ihren verschiedenen Buchstaben und Zeichen, benutzen um Sachverhalte darzustellen ist es nötig, dass Computer diese Speichern und mit ihnen arbeiten können.
+            Da wir typischerweise Sprache/Schrift, mit ihren verschiedenen Buchstaben und Zeichen, benutzen um Sachverhalte darzustellen ist es nötig, dass Computer diese speichern und mit ihnen arbeiten können.
             Computer arbeiten jedoch nur mit wahr/falsch bzw. Zahlen, weshalb es hierfür notwendig ist Codes zu haben.
 
             <h2>ASCII</h2>
             ASCII (American Standard Code for Information Interchange) gilt als die Grundlage für die meisten Textcodierungen.<br>
             Er weist den 7-bit langen Zahlen, also 2<sup>7</sup> = 128 Werten, Zeichen, die im amerikanischen Raum verwendet wurden zu.
-            Dies sind Groß- und Kleinbuchstaben, Satzzeichen, sowie einfache Sonderzeichen und Steuerungscodes, die zur Koordination des Datenverkehrs verwendet wurden bzw. verwendet verwendet werden können.<br>
+            Dies sind Groß- und Kleinbuchstaben, Satzzeichen, sowie einfache Sonderzeichen und Steuerungscodes, die zur Koordination des Datenverkehrs verwendet wurden bzw. verwendet werden können.<br>
             Überblick:<br>
             <br>
             <img src="../../images/ASCII_table.png" width="30%">
             <div class="credit">ASCII Tabelle: links die rechten vier Bit; oben die linken drei</div><br>
             Die Werte für 0-31, sowie 127, sind Steuerungscodes.<br>
-            Wie man jedoch sieht fehlen bereits für die deutsche Sprache Buchstaben, wie Ä, Ö, ü und ß.
+            Wie man jedoch sieht fehlen bereits für die deutsche Sprache Buchstaben, wie Ä, ä und ß.
 
             <h3>Erweiterung</h3>
             Weil das klassische ASCII nur 7 der 8 Bit in einem Byte nutzt wurden verschiedene Erweiterungen eingeführt, um weitere im normalen ASCII fehlenden Zeichen darstellen zu können.
@@ -72,9 +72,80 @@
             Die Zeichen wurden Zahlenwerten zugewiesen, sodass man mit den Zahlenwerten diese repräsentieren kann.<br>
             Standardmäßig gibt man die Codes der Zeichen hexadezimal, mit einer Mindestlänge von 4 Ziffern, an. Um zu makieren, dass es sich um ein Unicodesymbol handelt, wird der Präfix "U+" verwendet.<br>
             U+00DF entspricht "ß".<br>
+            Die ersten 128 Zeichen sind denen aus ASCII gleich. Dannach wurden einfach die Zeichen chronologisch angehängt.<br>
+            <br>
+            Unicode bestand in seiner ersten Version aus etwa 7.000 Zeichen aus 24 Schriftsystemen. Inzwischen ist dies auf knapp 150.000 Zeichen aus über 160 Schriftsystemen angewachsen.<br>
+            Unicode selbst bietet jedoch keine direkte Codierung an, weshalb es hierfür in anderen Systemen implementiert wurde.
 
             <h2>UTF</h2>
+            Das UTF (Unicode Transformation Format) implementiert die Darstellung von Unicode Zeichen für den Computer in Bytes.<br>
+            Es gibt hierbei drei verschiedene bekannte Formate:
+            <ul>
+                <li>UTF-8</li>
+                <li>UTF-16</li>
+                <li>UTF-32</li>
+            </ul>
+            Die Zahl gibt jeweils die Mindestlänge eines Zeichens in Bit an.
 
+            <h3>UTF-32</h3>
+            Im UTF-32 könnten auf den 4 Byte 2<sup>32</sup> = 4.294.967.296 Zeichen darstellen, während es in Unicode nur etwa 160.000 Zeichen gibt, sodass in dieser Darstellung einfach die Unicodewerte der Zeichen gespeichert werden können.
+            Da jedoch immer auf 4 Byte aufgefüllt werden muss, wird gegenüber UTF-16 häufig fast das doppelte an Speicher benötigt.
+
+            <h3>UTF-16</h3>
+            UFT-16 erlaubt es 2 oder 4 Byte für ein Zeichen zu verwenden.<br>
+            Werden 2 Byte verwendet, so wird einfach der Unicodewert des Zeichens in diesen zwei Byte gespeichert.<br>
+            Genügen diese 2 Byte nicht, so werden 4 Byte verwendet.
+            Der Unicodewert wird hierbei auf 20 Bit (2<sup>20</sup> = 1.048.576 > 160.000) aufgeteilt, wovon 10 in den ersten 2 Byte und 10 in den zweiten 2 Byte gespeichert werden.
+            Um die Zusammengehörigkeit zu signalisieren wird den 10 Bit des ersten Byte 110110 und vor den 10 Bit des Zweiten 110111 gespeichert.<br>
+            Der Notenschlüssel 𝄞 Unicode: U+1D11E wird also als <div class="blue">110110</div><div class="yellow">00 01010011</div> <div class="blue">110111</div><div class="green">11 01011100</div> dargestellt.
+            <div class="credit">Blau: Start-/Endmarkierung; Gelb: erste 10 Bit; Grün: zweite 10 Bit</div>
+
+            <h3>UTF-8</h3>
+            UTF ermöglicht es noch dynamischere Längen von 1, 2, 3 oder 4 Byte zu verwenden.<br>
+            Ein ASCII-Symbol wird einfach in einem Byte gespeichert. Die 0, mit der jedes ASCII-Byte beginnt, gibt an, dass der Block für das Zeichen nur ein Byte lang ist.<br>
+            Handelt es sich nicht um ein ASCII-Symbol, werden mehrere Byte benötigt. Das erste Byte beginnt hierbei mit 11, um den Anfang des Blocks zu signalisieren. Die folgenden Bytes beginnen mit 10.
+            Der Präfix des ersten Bytes erstreckt sich jedoch über die ersten zwei Bit. Denn es werden so viele Einsen verwenden, wie der Speicherblock lang ist, gefolgt von einer 0.<br>
+            <br>
+            <table>
+                <tr>
+                    <th>Länge in Byte</th>
+                    <th>1. Byte</th>
+                    <th>2. Byte</th>
+                    <th>3. Byte</th>
+                    <th>4. Byte</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>0xxx xxxx</th>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>110x xxxx</th>
+                    <th>10xx xxxx</th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>-</th>
+                    <th>1110 xxxx</th>
+                    <th>10xx xxxx</th>
+                    <th>10xx xxxx</th>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <th>1111 0xxx</th>
+                    <th>10xx xxxx</th>
+                    <th>10xx xxxx</th>
+                    <th>10xx xxxx</th>
+                </tr>
+            </table>
+            <div class="credit">x: Bits für die Speicherung des Unicodes; 1/0 feste Bits</div>
+            <br>
+            Da bei UTF-8 die Länge dynamisch ist, ist dies meist der effinzienteste Code und wid daher auch am häufigsten zur Textspeicherung verwendet.
             <br><br>~ Tobias
         </div>
     </main>

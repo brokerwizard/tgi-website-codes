@@ -166,3 +166,18 @@ main table th {
     margin-top: 1.5%;
     margin-bottom: 0.75%;
 }
+
+.green {
+    display: inline;
+    color: green;
+}
+
+.yellow {
+    display: inline;
+    color: yellow;
+}
+
+.blue {
+    display: inline;
+    color: blue;
+}
