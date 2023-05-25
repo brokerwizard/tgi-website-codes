@@ -62,7 +62,8 @@
             <h2>Darstellung</h2>
             Analog zur wissenschaftlichen Schreifweise für Zahlen verwenden Fließkommazahlen eine Mantisse, das ist die Ziffernstelle, und einen Exponenten.
             Da jedoch im Binärsystem gearbeitet wird, ist die Basis nicht 10 sondern 2. Da man nicht selbständig Kommapunkte setzten kann, wird die Mantisse so interpretiert, als würde es sich nach der ersten Ziffer befinden.<br>
-            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standarts">Standart</a> ab. Eine beisielhafte Darstellung wäre:<br>
+            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standards">Standard</a> ab. Eine beispielhafte Darstellung (orientiert an der Fließkommazahl halber Genauigkeit des IEEE 754), die 16-bit umfassen würde, könnte in etwa so aussehen:<br>
+            1 Bit gibt das Vorzeichen (0: +; 1: -) an. Dann geben 5 Bits in 2er-Komplementdarstellung den Exponenten zwischen -16 und 15 an. Am Ende befindet sich die Mantisse, in der die verbleibende positive Binärzahl, als hätte sie einem Komma nach dem ersten Bit, gespeichert wird.<br> 
             <br>
             <table>
                 <tr>
@@ -72,38 +73,110 @@
                     <td class="redBg">4</td>
                     <td class="redBg">2</td>
                     <td class="redBg">1</td>
-                    <td class="greenBg">9</td>
-                    <td class="greenBg">8</td>
-                    <td class="greenBg">7</td>
-                    <td class="greenBg">6</td>
-                    <td class="greenBg">5</td>
-                    <td class="greenBg">4</td>
-                    <td class="greenBg">3</td>
-                    <td class="greenBg">2</td>
                     <td class="greenBg">1</td>
-                    <td class="greenBg">0</td>
+                    <td class="greenBg">1/2</td>
+                    <td class="greenBg">1/4</td>
+                    <td class="greenBg">1/8</td>
+                    <td class="greenBg">1/16</td>
+                    <td class="greenBg">1/32</td>
+                    <td class="greenBg">1/64</td>
+                    <td class="greenBg">1/128</td>
+                    <td class="greenBg">1/256</td>
+                    <td class="greenBg">1/512</td>
                 </tr>
                 <tr>
-                    <td class="blueBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="redBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
-                    <td class="greenBg">0</td>
+                    <td class="blueBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="redBg number">0</td>
+                    <td class="redBg number">1</td>
+                    <td class="redBg number">1</td>
+                    <td class="greenBg number">1</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">1</td>
+                    <td class="greenBg number">1</td>
+                    <td class="greenBg number">1</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
+                    <td class="greenBg number">0</td>
                 </tr>
             </table>
+            <div class="credit">blau: Vorzeichen (1bit), rot: Exponent (5bit), grün: Mantisse (10bit)</div>
+            Eingabe einer dezimalen Kommazahl (als Komma wird "." verwendet):<br>
+            <input type="text" id="inputNum" placeholder="8.875">
+            <button type="button" onClick="genFloat()">Erzeuge Fließkommazahl</button>
+            <div id="genInfo"><div style="color: white">1.109375 * 2<sup>3</sup> = 8.875</div></div>
+            <br>
+            <div id="mantisse1">Da das erste Bit der Mantisse immer 1 ist, wird in vielen Standards dieses Bit weggelassen, sodass die Mantisse mit dem 1/2 Bit beginnt.</div>
+            <h2>Limitierung</h2>
 
-            <h2 id="standarts">Standarts</h2>
+            Wenn man versucht große oder sehr genaue Zahlen, wie es im oberen Beispiel 30000 oder 0.0003, versucht zu speichern fällt auf, das die Wirklich gespeicherten Werte abweichen (29984; 0.0002999305725097656).
+            Dies liegt daran, dass, durch das "verschieben" des Kommas, je nach Expont nur Werte mit einem bestimmten Abstand zu ihrem vorherigen bzw. nachfolgenden Wert haben.<br>
+            In Abhängigkeit vom Exponenten n und der Länge Mantisse m in Bitlässt sich der Abstand der Werte, die dargestellt werden können so ausdrücken:
+            <div class="highlight">log<sub>2</sub>(n - m)</div>
+            Je näher die Werte also an Null sind, desto genauer können sie angegeben werden.<br>
+            <br>
+            <img src="../../images/floatingPointDistribution.png" width="80%">
+            <div class="credit">Visualisierung der Darstellbaren Werte als Fließkommazahl; By Joeleoj123 - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95784506</div>
+
+            <h2 id="standards">Standards</h2>
+            Die heutzutage Üblichen Fließkommazahldarstellungen sind in der IEEE 754 Norm definiert.
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Vorzeichenlänge in bit</th>
+                    <th>Mantissenlänge in bit<sup><a href="#1">1</a></sup></th>
+                    <th>Exponentenlänge in bit</th>
+                    <th>Gesamtlänge in bit</th>
+                </tr>
+                <tr>
+                    <td>Half</td>
+                    <td>1</td>
+                    <td>11</td>
+                    <td>5</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>Single</td>
+                    <td>1</td>
+                    <td>24</td>
+                    <td>8</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>Double</td>
+                    <td>1</td>
+                    <td>53</td>
+                    <td>11</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>Quadruple</td>
+                    <td>1</td>
+                    <td>113</td>
+                    <td>15</td>
+                    <td>128</td>
+                </tr>
+                <tr>
+                    <td>Octuple</td>
+                    <td>1</td>
+                    <td>237</td>
+                    <td>19</td>
+                    <td>256</td>
+                </tr>
+            </table>
+            <div id="1"><sup>1</sup>Hier wird das erste Bit der Matisse in der Darstellung weggelassen, in der Länge jedoch mit angegeben <a href="#mantisse1">Siehe</a></div>
+            <br>
+            Von diesen Varianten werden Single und Double am häufigsten verwendet.<br>
+
+            <h3>Besondere Werte</h3>
+            IEEE 754 definiert zudem besondere Werte, wenn der Exponent nur aus Einsen besteht:
+            <ul>
+                <li>Mantisse = 0: Unendlich, positiv oder negativ abhängig vom Vorzeichen</li>
+                <li>Mantisse ≠ 0: NaN (Not a Number), häufig als Platzhalter verwendet, wenn Zahlen nicht korrekt gelesen werden konnten</li>
+            </ul>
 
             <br><br>~ Tobias
         </div>

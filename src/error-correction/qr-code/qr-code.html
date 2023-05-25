@@ -50,7 +50,7 @@
             <h1>Fehlerkorrekur in QR-Codes</h1>
             In <a href="../../visual/qr-code.html">QR-Codes</a> wird Fehlerkorrekur verwendet, um sie gegen Verschmutzungen oder andere kleinere Beschädigungen widerständig zu machen.<br>
             Auch wird es dadurch möglich Logos oder ähliches im QR-Code zu platzieren, da beim Scannen die dadurch fehlenden Daten ersetzt werden können.<br>
-            Zur Fehlerkorrekur wird der <a href="#reed-solomon">Reed-Solomon Code</a> verwendet. Sie entstandenen Fehlerkorrekurdaten werden nach dem Ende der gespeicherten nutzdaten im Datenbereich des QR-Codes gespeichert. im <br>
+            Zur Fehlerkorrekur wird der <a href="#reed-solomon">Reed-Solomon Code</a> verwendet. Die entstandenen Fehlerkorrekurdaten werden nach dem Ende der gespeicherten nutzdaten im Datenbereich des QR-Codes gespeichert.<br>
             <br>
             <img src="../../images/schoolhomepageQR.png" alt="">
             <div class="credit">QR-Code zur Schulwebsite, in dem sich das Schullogo befindet</div>
@@ -59,8 +59,8 @@
             Im QR-Code Standart gibt es verschiedene Fehlerkorrekur-Level, was bedeutet, dass verschieden viele <a href="../error-correction.html#parity">Paritätsdaten</a>, verwendet und somit auch verschieden viele Fehler korrigiert werden können.<br>
             <br>
             <img src="../../images/qr-code_positioning.png"><br>
-            An den lila markierten Positionen wird gespeichet, welches Fehlerkorrekur-Level verwendet wird, als Pixelpaar codiert. Diese Paar wird doppelt (links, unten) gespeichert, um es gegen Beschädigungen resistanter zu machen.
-            Das Paar wird von links nach rechts bzw. von unten nach obn gelesen<br>
+            An den lila markierten Positionen wird gespeichet, welches Fehlerkorrekur-Level verwendet wird, als Pixelpaar codiert. Diese Paar wird doppelt (links, unten) gespeichert, um es gegen Beschädigungen resistenter zu machen.
+            Das Paar wird von links nach rechts bzw. von unten nach oben gelesen<br>
             <br>
             <table>
                 <tr>
@@ -108,7 +108,7 @@
             <h2 id="reed-solomon">Reed-Solomon Code</h2>
             Der Reed-Solomon Code ist ein fehlerkorigirender Code, der mittels der Polynominterpolation über die Daten funktioniert.<br>
             Er nutzt es aus, dass für n Datenpunkte es genau eine Polynomfunktion n-1ten Grades gibt, die all diese schneidet. Von dieser Funktion werden eine beliebige Anzahl (k) weiterer Datenwerte abgelesen und als Paritätsdaten verwendet.
-            Sind nun Datenpunkte verloren gegangen können sie wiederhergestellt werden, solange noch mindestens n der n + k Datenpunkte vorhanden sind. Dann auf diesen n Datenpunkten kann erneut die Polynomfunktion interpoliert werden.
+            Sind nun Datenpunkte verloren gegangen können sie wiederhergestellt werden, solange noch mindestens n der n + k Datenpunkte vorhanden sind. Dann kann auf diese n Datenpunkte erneut die Polynomfunktion interpoliert werden.
             Aus dieser Funktion können dann die verloren gegangen Daten wieder abglesen werden. Es dürfen somit höchstens k Datenpunkte verloren gehen, was aber auch bedeutet, dass, wenn man mehr zusätzliche Punkte wählt, mehr Fehler korrigiert werden können.
             Hierdurch kommen die verschiedenen Fehlerkorrekur-Levels zustande, denn es werden je nach Level größere oder kleinere Werte für k verwendet.<br>
             Für gewöhnlich werden für die Positionen der Polynomfunktion, an der sich die Datenwerte befinden ganze Zahnlen (0; 1; 2; ...) verwendet.
