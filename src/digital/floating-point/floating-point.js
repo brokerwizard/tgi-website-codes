@@ -3,7 +3,6 @@ function genFloat() {
     if(document.getElementById("inputNum").value == "") {
         input = 8.875
     }
-    console.log(input)
     if(input == NaN) {
         document.getElementById("genInfo").innerText = "Die eingegebene Zahl ist ungültig"
         document.getElementById("genInfo").style.color = "red"
@@ -29,12 +28,8 @@ function genFloat() {
         mantissa = 1
         exp += 1
     }
-    console.log(exp)
-    console.log(mantissa)
     binRepresentationExp = dec2bin(exp).padStart(32, "0")
     binRepresentationMantissa = dec2bin(mantissa * 512).padStart(10, "0")
-    console.log(binRepresentationExp)
-    console.log(binRepresentationMantissa)
     
     cells[1].innerText = binRepresentationExp[0]
     for (let i = 2; i < 6; i++) {

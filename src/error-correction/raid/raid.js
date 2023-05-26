@@ -25,6 +25,7 @@ function repairData() {
 
     for(i = 0; i < 4; i++) {
         if(bits[i] != 0 && bits[i] != 1) {
+            // i ist Index des Wertes, welcher entfernt wurde
             sum = 0
             for(j = 0; j < 4; j++) {
                 if(j != i) {
@@ -32,8 +33,9 @@ function repairData() {
                 }
             }
             sum %= 2
-            console.log(sum)
+            // sollte ein weiterer Wert enternt worden sein, so ist sum NaN
             if(sum != 0 && sum != 1) {
+                
                 document.getElementById("resultDiv").innerText = "Beim Reparieren der Daten kam es zu einem Fehler; Überprüfe, dass nur ein Feld leer ist"
                 document.getElementById("resultDiv").style.color = "red"
                 return

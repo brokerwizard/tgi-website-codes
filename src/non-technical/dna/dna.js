@@ -5,7 +5,7 @@ function genBin() {
     helix1 = dnaCodeToValue(document.getElementById("tableHelix1").value)
     base0 = parseInt(document.getElementById("tableBase0").value)
     base1 = parseInt(document.getElementById("tableBase1").value)
-
+    // Positionierung der Werte an den verschiedenen Stellen
     sum =  base0 * 32
     sum += helix0 * 8
     sum += base1 * 4
@@ -34,7 +34,7 @@ function genBin() {
 
 function genDNA() {
     binValue = parseInt(document.getElementById("tableCode").value, 2)
-
+    // Extrahieren der Werte an den verschiedenen Stellen
     helix0 = Math.floor((binValue % 32) / 8)
     helix1 = Math.floor(binValue % 4)
     base0 = Math.floor(binValue / 32)
@@ -82,8 +82,4 @@ function valueToDNACode(val) {
         default:
             return "Error"
     }
-}
-
-function checkDNAValidility(helix0, helix1, base0, base1) {
-    
 }
