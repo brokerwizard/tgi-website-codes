@@ -1,1 +1,6 @@
 @import "../../core.css";
+
+.contentPane .credit {
+    color: gray;
+    font-size: smaller;
+}
