@@ -1,7 +1,7 @@
 function genParity() {
-    a1 = parseInt(document.getElementById("inputText1").value)
-    a2 = parseInt(document.getElementById("inputText2").value)
-    a3 = parseInt(document.getElementById("inputText3").value)
+    a1 = parseInt(document.getElementById("input0").value)
+    a2 = parseInt(document.getElementById("input1").value)
+    a3 = parseInt(document.getElementById("input2").value)
 
     // simuliere bitwise XOR
     ap = (a1 + a2 + a3) % 2
@@ -10,7 +10,7 @@ function genParity() {
         document.getElementById("resultDiv").innerText = "Beim Generieren des Paritätsbits ist ein Fehler aufgetreten; Überprüfe die Eingabe"
         document.getElementById("resultDiv").style.color = "red"
     } else {
-        document.getElementById("inputTextp").value = ap
+        document.getElementById("input3").value = ap
         document.getElementById("resultDiv").innerText = "Paritätsbit wurde generiert"
         document.getElementById("resultDiv").style.color = "lime"
     }
@@ -18,31 +18,28 @@ function genParity() {
 
 function repairData() {
     bits = []
-    bits.push(parseInt(document.getElementById("inputText1").value),
-    parseInt(document.getElementById("inputText2").value),
-    parseInt(document.getElementById("inputText3").value),
-    parseInt(document.getElementById("inputTextp").value))
+    bits.push(parseInt(document.getElementById("input0").value),
+    parseInt(document.getElementById("input1").value),
+    parseInt(document.getElementById("input2").value),
+    parseInt(document.getElementById("input3").value))
 
-    for(i = 1; i <= 4; i++) {
+    for(i = 0; i < 4; i++) {
         if(bits[i] != 0 && bits[i] != 1) {
             sum = 0
-            for(j = 1; j <= 4; j++) {
+            for(j = 0; j < 4; j++) {
                 if(j != i) {
                     sum += bits[j]
                 }
             }
             sum %= 2
+            console.log(sum)
             if(sum != 0 && sum != 1) {
-                document.getElementById("resultDiv").innerText = "Beim Reperieren der Daten kam es zu einem Fehler; Überprüfe, dass nur ein Feld leer ist"
+                document.getElementById("resultDiv").innerText = "Beim Reparieren der Daten kam es zu einem Fehler; Überprüfe, dass nur ein Feld leer ist"
                 document.getElementById("resultDiv").style.color = "red"
                 return
             }
-            suffix = i.toString()
-            if(suffix == "4") {
-                suffix = "p"
-            }
-            document.getElementById("inputText" + suffix).value = sum
-            document.getElementById("resultDiv").innerText = "Daten wurden erfolgreich reperiert"
+            document.getElementById("input" + i).value = sum
+            document.getElementById("resultDiv").innerText = "Daten wurden erfolgreich repariert"
             document.getElementById("resultDiv").style.color = "lime"
             return
         }
