@@ -50,11 +50,11 @@
         <div class="contentPane">
             <h1>Erklärung und Entstehungshintergrund:</h1><br>
             QR-Codes (Quick Response Code) ist ein zweidimensionaler Code, welcher aus einer quadratischen Matrix mit
-            schwarzen und weißen Quadraten/Punkten besteht.<br>
+            schwarzen und weißen Quadraten/ Punkten besteht.<br>
             Diese Matrix wird Module genannt und stellt die kodierten binären Daten dar.<br>
             Die Bekannten drei Makierungen in den vier äusseren Ecken, geben die Oriertierung vor.<br>
-            Erstmalig wurde der QR-Code 1994 von der TochterFirma Denso Wave entwickelt welche zu Toyota gehört,<br>
-            um die Markierung von Baugruppen und Komponenten für die Logistik diese Globalplayers zu vereinfachen.
+            Erstmalig wurde der QR-Code 1994 von der Tochterfirma Denso Wave entwickelt welche zu Toyota gehört,<br>
+            um die Markierung von Baugruppen und Komponenten für die Logistik dieses Globalplayers zu vereinfachen.
         </div>
         <div class="contentPane">
             <h1>Verwendungszwecke:</h1><br>
@@ -69,8 +69,8 @@
                 <li>Hinweise für Produkte & Lebensmittel</li>
                 <li>E-learning</li>
                 <li>Verfolgung von Nachrichten und Informationen</li>
-                <li>Hintergrundinformation von Objekten im z.B. Museum</li>
-                <li>Zur Authentizierung z.b. 2FA</li>
+                <li>Hintergrundinformation von Objekten in z.B. Museen</li>
+                <li>Zur Authentizierung z.B. 2 Faktor Authentifizierung</li>
             </ul>
         </div>
         <div class="contentPane">
@@ -88,16 +88,16 @@
             <br>
             In eingigen Ländern wurden bestimmte QR-Code standards als die Nationalen Standards festgelegt.
             <ul>
-                <li><b>Japan</b> Japanese Industrial Standard JIS X 0510</li>
-                <li><b>China</b> hinese National Standard GB/T 18284</li>
-                <li><b>Südkorea</b> Korean National Standard KSXISOIEC 18004</li>
-                <li><b>Vietnam</b> Vietnamese National Standard TCVN 7322</li>
-                <li><b>Singapur</b> Singapore National Standard SS 543 (’09)</li>
+                <li><b>Japan:</b> Japanese Industrial Standard JIS X 0510</li>
+                <li><b>China:</b> Hinese National Standard GB/T 18284</li>
+                <li><b>Südkorea:</b> Korean National Standard KSXISOIEC 18004</li>
+                <li><b>Vietnam:</b> Vietnamese National Standard TCVN 7322</li>
+                <li><b>Singapur:</b> Singapore National Standard SS 543 (’09)</li>
             </ul>
         </div>
         <div class="contentPane">
-            <h1>Enkodirung:</h1><br>
-            Die Enkodirung ist der Hintergrundsprozess für die Generierung des QR-Codes, er läuft folgendermassen ab:<br>
+            <h1>Enkodierung:</h1><br>
+            Die Enkodierung ist der Hintergrundsprozess für die Generierung des QR-Codes, er läuft folgendermassen ab:<br>
             <ul>
                 <li>Wählen Sie den QR-Code-Typ und die Version aus. Wie viele Datenmodule verwendet werden können, hängt
                     von der Version ab und welche Art von Daten gespeichert werden können.
@@ -105,7 +105,7 @@
                     kann jedes Segment bis zu elf Bit an Informationen enthalten.
                 </li>
                 <li>
-                    Zu jedem Segment fügen Sie Bits zur Fehlerkorrektur und Auffüllung hinzu. Wenn der QR-Code
+                    Zu jedem Segment fügen Sie Bits zur <a href="../../error-correction/qr-code/qr-code.html">Fehlerkorrektur</a> und Auffüllung hinzu. Wenn der QR-Code
                     beschädigt oder verzerrt ist, hilft die Fehlerkorrektur bei der Wiederherstellung der Daten, und die
                     Auffüllbits füllen ungenutzten Platz im Segment auf.
                 </li>
@@ -134,7 +134,7 @@
             </ul>
         </div>
         <div class="contentPane">
-            <h1>Dekodirung:</h1>
+            <h1>Dekodierung:</h1>
             Das Dekodieren ist der Hintergrundsprozess für das Lesen eines QR-Codes, er läuft folgendermassen ab:<br>
             <ul>
                 <li>Durch die Suche nach den drei Positionsmarkierungen und der Ruhezone können Sie den QR-Code finden.
@@ -146,14 +146,14 @@
                     Formatinformationen angegeben. Die Anzahl der Datenmodule, die für den QR-Code verwendet werden,
                     wird in den Versionsinformationen angegeben.
                 </li>
-                <li>Um den Kodierungsprozess umzukehren, wenden Sie das Maskenmuster auf die Datenmodule an. Ein Maskenmuster ist eine Reihe von Regeln, die verwendet werden, um zu bestimmen, ob ein Datenmodul weiß oder schwarz sein soll. Das Maskenmuster hilft bei der Vermeidung kontrastreicher oder kontrastärmerer QR-Codes, die das Scannen erschweren könnten.</li>
+                <li>Um den Kodierungsprozess umzukehren, müssen Sie das Maskenmuster auf die Datenmodule anwenden. Ein Maskenmuster ist eine Reihe von Regeln, die verwendet werden, um zu bestimmen, ob ein Datenmodul weiß oder schwarz sein soll. Das Maskenmuster hilft bei der Vermeidung kontrastreicher oder kontrastärmerer QR-Codes, die das Scannen erschweren könnten.</li>
                 <li>Ordnen Sie die Datenmodule nach einem bestimmten Muster in einen Datenstrom. Das Muster basiert auf der Version des QR-Codes, um sicherzustellen, dass die Datenmodule gleichmäßig über den Code verteilt sind.</li>
                 <li>Unterteilen Sie den Datenstrom je nach Typ in Segmente. Wenn es sich um alphanumerische Daten handelt, kann jedes Segment bis zu elf Bit an Informationen enthalten.</li>
             </ul>
         </div>
         <div class="contentPane">
             <h1>Lesen:</h1><br>
-            Das Lesen eines QR-Codes besteht auf zwei Schritte:
+            Das Lesen eines QR-Codes besteht aus zwei Schritte:
             <ol>
                 <li>Das Generieren eines Bildes der QR-Codierten Datei, z.B mit Hilfer einer Kamera.</li>
                 <li>Das umgewandelte Bild und seine codierten Daten in Textform dekodieren.</li>
@@ -175,7 +175,7 @@
             <br>Der gewünschte zu codierenten Text kann nach <em>&chl</em> gefunden werden, also
             <em>https://www.gs-offenburg.de/</em>.
             Das gewünschte Fehlerkorrektur-Level kann nach <em>&chld</em> gefunden werden, hierbei ist dies L also Low
-            mit 07%.
+            mit 7%.
             <!--Input-->
             <div class="qr-code-holder">
                 <img src="https://chart.googleapis.com/chart?cht=qr&chl=https://www.gs-offenburg.de/&chs=177x177&chld=L|0"
@@ -206,16 +206,16 @@
             <h1>Fehlerkorrektur & Speichergrößen:</h1><br>
             Ein QR-Code kann mit 4 unterschiedlich Stuffen an Fehlerkorrektur verwendet werden.<br>
             <ol>
-                <li><b>Low</b>, 07% der Daten können bei einem Fehler wiederhergestellet werden.</li>
-                <li><b>Medium</b>, 15% der Daten können bei einem Fehler wiederhergestellet werden.</li>
-                <li><b>Quartile</b>, 25% der Daten können bei einem Fehler wiederhergestellet werden.</li>
-                <li><b>High</b>, 30% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+                <li><b>Low:</b> 7% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+                <li><b>Medium:</b> 15% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+                <li><b>Quartile:</b> 25% der Daten können bei einem Fehler wiederhergestellet werden.</li>
+                <li><b>High:</b> 30% der Daten können bei einem Fehler wiederhergestellet werden.</li>
             </ol>
             <a href="../../error-correction/qr-code/qr-code.html">Genauere Erklärung</a>
             <br>
             Die maximale Informationsgehaltskapazität des QR-Codes hängt von der Größe des QR-Codes und des
             Fehlerkorrektur-Levels ab.
-            So zum Beispiel kann ein 177x177 großer QR-Code mit einem Fehlerkorrektur-Level von L (07%) bis zu 23.648
+            So zum Beispiel kann ein 177x177 großer QR-Code mit einem Fehlerkorrektur-Level von Low (7%) bis zu 23.648
             Bits (2.956 Byte) speicher.
         </div>
         <div class="contentPane">~ Raphael</div>
