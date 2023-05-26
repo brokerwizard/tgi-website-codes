@@ -12,3 +12,8 @@
 em {
     opacity: 50%;
 }
+
+.contentPane .credit {
+    color: gray;
+    font-size: smaller;
+}
