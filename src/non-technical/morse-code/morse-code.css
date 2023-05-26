@@ -120,3 +120,14 @@ main {
     color: rgb(70, 120, 230);
     text-decoration: underline;
 }
+
+.contentPane .credit {
+    color: gray;
+    font-size: smaller;
+}
+
+.inverted {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+
+}
