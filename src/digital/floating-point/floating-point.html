@@ -1,69 +1,143 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+    <!-- METADATA -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE & FAVICON -->
     <title>Kommazahlen</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="../../images/logo-black.png">
+
+    <!-- LINK BOOSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
+
 <body>
-    <nav>
-        <ul id="navbarList">
-            <!--img-->
-            <li>
-                <a href="#">Nicht technische Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+    <!-- NAVIGATION -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../index/index.html">
+                <img src="../../images/logo-white.png" alt="Codes" width="32" height="32">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-hover="dropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nicht technische Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../non-technical/non-technical.html"><b>Nicht technische Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../../non-technical/braille/braille.html">Blindenschrift</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../../non-technical/dna/dna.html">DNA</a></li>
+                            <li><a class="dropdown-item"
+                                    href="../../non-technical//morse-code/morse-code.html">Morsecode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Visuelle Codes
+                        </a>
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../visual/visual.html"><b>Visuelle
+                                        Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../../visual/qr-code/qr-code.html">QR-Code</a></li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../../visual/bar-code/bar-code.html">Strichcode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Digitale Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../digital/digital.html"><b>Digitale Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../../digital/floating-point/floating-point.html">Kommazahlen</a></li>
+                            <li><a class="dropdown-item" href="../../digital/text/text.html">Textdarstellung</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Fehlerkorrektur
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../error-correction/error-correction.html"><b>Fehlerkorrektur</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../../error-correction/qr-code/qr-code.html">QR-Code</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../../error-correction/hamming-code/hamming-code.html">Hamming-Code</a></li>
+                            <li><a class="dropdown-item" href="../../error-correction/raid/raid.html">RAID</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#">Visuelle Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Digitale Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="./hamming-codes/hamming-codes.html">Fehlerkorrekur</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
+   
+    <!-- MAIN -->
     <main>
         <!--content goes here-->
-        <div class="contentPane">
+        <div class="contentPane container px-4 text-left">
             <h1>Kommazahlen in der Digitaltechnik</h1>
-            Da man für viele gängige Berechnungen Kommazahlen benötigt, ist es auch nötig diese in Computern darzustellen und mit ihnen zu rechnen.<br>
-            Hierfür werden Fließkommazahlen verwendet. Fließkomma heißen sie, da Teile der Darstellung dafür verantwortlich sind das Komma zu "verschieben".
+            Da man für viele gängige Berechnungen Kommazahlen benötigt, ist es auch nötig diese in Computern
+            darzustellen und mit ihnen zu rechnen.<br>
+            Hierfür werden Fließkommazahlen verwendet. Fließkomma heißen sie, da Teile der Darstellung dafür
+            verantwortlich sind das Komma zu "verschieben".
 
             <h2>Wissenschaftliche Schreibweise</h2>
             Die Fließkommazahldarstellung ähnelt der wissenschaftlichen Schreibweise in ihrem Aufbau.
-            Dabei werden sehr große oder sehr kleine Zahlen als Kombination einer Kommazahl (r; normalerweise zwischen 1 und 10) und einer 10er-Potenz (10<sup>n</sup>) repräsentiert.<br>
+            Dabei werden sehr große oder sehr kleine Zahlen als Kombination einer Kommazahl (r; normalerweise zwischen 1
+            und 10) und einer 10er-Potenz (10<sup>n</sup>) repräsentiert.<br>
             Beispiele:<br>
             <p>1.5 * 10<sup>8</sup> = 150,000,000</p>
             <p>2.735 * 10<sup>-5</sup> = 0.00002735</p>
             <p>4.35 * 10<sup>14</sup> = 435,000,000,000,000</p>
 
             <h2>Darstellung</h2>
-            Analog zur wissenschaftlichen Schreifweise für Zahlen verwenden Fließkommazahlen eine Mantisse, das ist die Ziffernstelle, und einen Exponenten.
-            Da jedoch im Binärsystem gearbeitet wird, ist die Basis nicht 10 sondern 2. Da man nicht selbständig Kommapunkte setzten kann, wird die Mantisse so interpretiert, als würde es sich nach der ersten Ziffer befinden.<br>
-            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standards">Standard</a> ab. Eine beispielhafte Darstellung (orientiert an der Fließkommazahl halber Genauigkeit des IEEE 754), die 16-bit umfassen würde, könnte in etwa so aussehen:<br>
-            1 Bit gibt das Vorzeichen (0: +; 1: -) an. Dann geben 5 Bits in 2er-Komplementdarstellung den Exponenten zwischen -16 und 15 an. Am Ende befindet sich die Mantisse, in der die verbleibende positive Binärzahl, als hätte sie einem Komma nach dem ersten Bit, gespeichert wird.<br> 
+            Analog zur wissenschaftlichen Schreifweise für Zahlen verwenden Fließkommazahlen eine Mantisse, das ist die
+            Ziffernstelle, und einen Exponenten.
+            Da jedoch im Binärsystem gearbeitet wird, ist die Basis nicht 10 sondern 2. Da man nicht selbständig
+            Kommapunkte setzten kann, wird die Mantisse so interpretiert, als würde es sich nach der ersten Ziffer
+            befinden.<br>
+            Die Darstellung im Speicher hängt nun vom verwendeten <a href="#standards">Standard</a> ab. Eine
+            beispielhafte Darstellung (orientiert an der Fließkommazahl halber Genauigkeit des IEEE 754), die 16-bit
+            umfassen würde, könnte in etwa so aussehen:<br>
+            1 Bit gibt das Vorzeichen (0: +; 1: -) an. Dann geben 5 Bits in 2er-Komplementdarstellung den Exponenten
+            zwischen -16 und 15 an. Am Ende befindet sich die Mantisse, in der die verbleibende positive Binärzahl, als
+            hätte sie einem Komma nach dem ersten Bit, gespeichert wird.<br>
             <br>
             <table>
                 <tr>
@@ -107,19 +181,26 @@
             Eingabe einer dezimalen Kommazahl (als Komma wird "." verwendet):<br>
             <input type="text" id="inputNum" placeholder="8.875">
             <button type="button" onClick="genFloat()">Erzeuge Fließkommazahl</button>
-            <div id="genInfo"><div style="color: white">1.109375 * 2<sup>3</sup> = 8.875</div></div>
+            <div id="genInfo">
+                <div style="color: white">1.109375 * 2<sup>3</sup> = 8.875</div>
+            </div>
             <br>
-            <div id="mantisse1">Da das erste Bit der Mantisse immer 1 ist, wird in vielen Standards dieses Bit weggelassen, sodass die Mantisse mit dem 1/2 Bit beginnt.</div>
+            <div id="mantisse1">Da das erste Bit der Mantisse immer 1 ist, wird in vielen Standards dieses Bit
+                weggelassen, sodass die Mantisse mit dem 1/2 Bit beginnt.</div>
             <h2>Limitierung</h2>
 
-            Wenn man versucht große oder sehr genaue Zahlen, wie es im oberen Beispiel 30000 oder 0.0003, versucht zu speichern fällt auf, das die Wirklich gespeicherten Werte abweichen (29984; 0.0002999305725097656).
-            Dies liegt daran, dass, durch das "verschieben" des Kommas, je nach Expont nur Werte mit einem bestimmten Abstand zu ihrem vorherigen bzw. nachfolgenden Wert haben.<br>
-            In Abhängigkeit vom Exponenten n und der Länge Mantisse m in Bit lässt sich der Abstand der Werte, die dargestellt werden können so ausdrücken:
+            Wenn man versucht große oder sehr genaue Zahlen, wie es im oberen Beispiel 30000 oder 0.0003, versucht zu
+            speichern fällt auf, das die Wirklich gespeicherten Werte abweichen (29984; 0.0002999305725097656).
+            Dies liegt daran, dass, durch das "verschieben" des Kommas, je nach Expont nur Werte mit einem bestimmten
+            Abstand zu ihrem vorherigen bzw. nachfolgenden Wert haben.<br>
+            In Abhängigkeit vom Exponenten n und der Länge Mantisse m in Bit lässt sich der Abstand der Werte, die
+            dargestellt werden können so ausdrücken:
             <div class="highlight">log<sub>2</sub>(n - m)</div>
             Je näher die Werte also an Null sind, desto genauer können sie angegeben werden.<br>
             <br>
             <img src="../../images/floatingPointDistribution.png" width="80%">
-            <div class="credit">Visualisierung der Darstellbaren Werte als Fließkommazahl; By Joeleoj123 - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95784506</div>
+            <div class="credit">Visualisierung der Darstellbaren Werte als Fließkommazahl; By Joeleoj123 - Own work, CC
+                BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=95784506</div>
 
             <h2 id="standards">Standards</h2>
             Die heutzutage Üblichen Fließkommazahldarstellungen sind in der IEEE 754 Norm definiert.
@@ -167,7 +248,8 @@
                     <td>256</td>
                 </tr>
             </table>
-            <div id="1"><sup>1</sup>Hier wird das erste Bit der Matisse in der Darstellung weggelassen, in der Länge jedoch mit angegeben. <a href="#mantisse1">Siehe</a></div>
+            <div id="1"><sup>1</sup>Hier wird das erste Bit der Matisse in der Darstellung weggelassen, in der Länge
+                jedoch mit angegeben. <a href="#mantisse1">Siehe</a></div>
             <br>
             Von diesen Varianten werden Single und Double am häufigsten verwendet.<br>
 
@@ -175,22 +257,39 @@
             IEEE 754 definiert zudem besondere Werte, wenn der Exponent nur aus Einsen besteht:
             <ul>
                 <li>Mantisse = 0: Unendlich, positiv oder negativ abhängig vom Vorzeichen</li>
-                <li>Mantisse ≠ 0: NaN (Not a Number), häufig als Platzhalter verwendet, wenn Zahlen nicht korrekt gelesen werden konnten</li>
+                <li>Mantisse ≠ 0: NaN (Not a Number), häufig als Platzhalter verwendet, wenn Zahlen nicht korrekt
+                    gelesen werden konnten</li>
             </ul>
-
-            <br><br>~ Tobias
         </div>
     </main>
-    <footer>
-        <table>
-            <tr>
-                <td>Quellen</td>
-                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
-                <td><a>Lizenz</a></td>
-            </tr>
-        </table>
+    <!-- FOOTER -->
+    <footer class="py-3 absolute-bottom">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="../index/index.html" class="nav-link px-2 text-white">Home</a></li>
+            <li class="nav-item"><a href="../sources/sources.html" class="nav-link px-2 text-white">Quellen</a></li>
+            <li class="nav-item"><a href="https://github.com/brokerwizard/tgi-website-codes/tree/master"
+                    class="nav-link px-2 text-white">Source-Code</a></li>
+            <li class="nav-item"><a href="../impressum/impressum.html" class="nav-link px-2 text-white">Impressum</a>
+            </li>
+        </ul>
+        <p class="text-center text-white">© 2023 FTR</p>
+        <p class="text-center" id="last-edited">Zuletzt bearbeitet: 26.05.2023 ~ Tobias</p>
     </footer>
-    <script src="./floating-point.js"></script>
+
+    <!-- LOAD POPPER & BOOSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+
+    <!-- LOAD PAGE JS -->
+    <script src="floating-point.js"></script>
+
+    <!-- LINK PAGE CSS -->
     <link rel="stylesheet" href="floating-point.css">
 </body>
+
 </html>

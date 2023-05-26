@@ -1,59 +1,123 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+    <!-- METADATA -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamming-Code</title>
+
+    <!-- TITLE & FAVICON -->
+    <title>Hamming Codes</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="../images/logo-black.png">
+
+    <!-- LINK BOOSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
+
 <body>
-    <nav>
-        <ul id="navbarList">
-            <!--img-->
-            <li>
-                <a href="#">Nicht technische Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+    <!-- NAVIGATION -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index/index.html">
+                <img src="../images/logo-white.png" alt="Codes" width="32" height="32">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-hover="dropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nicht technische Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../non-technical/non-technical.html"><b>Nicht technische Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../non-technical/braille/braille.html">Blindenschrift</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../non-technical/dna/dna.html">DNA</a></li>
+                            <li><a class="dropdown-item"
+                                    href="../non-technical//morse-code/morse-code.html">Morsecode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Visuelle Codes
+                        </a>
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item" id="navbar-title-name" href="../visual/visual.html"><b>Visuelle
+                                        Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../visual/qr-code/qr-code.html">QR-Code</a></li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../visual/bar-code/bar-code.html">Strichcode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Digitale Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../digital/digital.html"><b>Digitale Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../digital/floating-point/floating-point.html">Kommazahlen</a></li>
+                            <li><a class="dropdown-item" href="../digital/text/text.html">Textdarstellung</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Fehlerkorrektur
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../error-correction/error-correction.html"><b>Fehlerkorrektur</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../error-correction/qr-code/qr-code.html">QR-Code</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../error-correction/hamming-code/hamming-code.html">Hamming-Code</a></li>
+                            <li><a class="dropdown-item" href="../error-correction/raid/raid.html">RAID</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#">Visuelle Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Digitale Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Fehlerkorrekur</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
+
     <main>
         <!--content goes here-->
-        <div class="contentPane">
+        <div class="contentPane container px-4 text-left">
             <h1>Hamming-Code</h1>
 
-            Der Hamming-Code, benannt nach seinem Erfinder Richard Wesley Hamming, ist ein fehlerkorigierender Code, der mittels Blöcken von Daten arbeitet, in welche geschickt <a href="../error-correction.html#parity">Paritätsbits</a> eingefügt werden.
-            
+            Der Hamming-Code, benannt nach seinem Erfinder Richard Wesley Hamming, ist ein fehlerkorigierender Code, der
+            mittels Blöcken von Daten arbeitet, in welche geschickt <a
+                href="../error-correction.html#parity">Paritätsbits</a> eingefügt werden.
+
             <h2>Generierung eines Blockes</h2>
-            
-            Ein Block besteht aus einer Zweierpotenz(N<sup>2</sup>) an Bits, die man gewöhnlich als NxN Block darstellt.<br>
+
+            Ein Block besteht aus einer Zweierpotenz(N<sup>2</sup>) an Bits, die man gewöhnlich als NxN Block
+            darstellt.<br>
             <br>
             <table class="hammingCodeTableBig">
                 <tr>
@@ -83,9 +147,13 @@
             </table>
             <div class="credit">4x4 Block aus 16 Bit</div>
             <br>
-            Die blauen Zellen stellen die Orte dar, an denen <a href="../error-correction.html#parity">Paritätsbits</a> gespeichert werden.<br>
-            Diese werden so gewählt, dass in die Anzahl der Bits, die 1 sind, in den verschiedenen Unterblöcken(siehe nächste Tabelle) gerade ist, was equivalent dazu ist ihn durch das Anwenden des Exklusiven Oders (XOR) auf alle Bits des Unterblocks.<br>
-            Die grüne Zelle ist ein weiterer <a href="../error-correction.html#parity">Paritätsbits</a>. Dieser ergänzt jedoch den gesamten Block auf eine gerade Anzahl an Bits mit Wert 1.
+            Die blauen Zellen stellen die Orte dar, an denen <a href="../error-correction.html#parity">Paritätsbits</a>
+            gespeichert werden.<br>
+            Diese werden so gewählt, dass in die Anzahl der Bits, die 1 sind, in den verschiedenen Unterblöcken(siehe
+            nächste Tabelle) gerade ist, was equivalent dazu ist ihn durch das Anwenden des Exklusiven Oders (XOR) auf
+            alle Bits des Unterblocks.<br>
+            Die grüne Zelle ist ein weiterer <a href="../error-correction.html#parity">Paritätsbits</a>. Dieser ergänzt
+            jedoch den gesamten Block auf eine gerade Anzahl an Bits mit Wert 1.
             <br><br>
             <div class="hammingCodeTableCluster">
                 <table class="hammingCodeTableSmall">
@@ -197,8 +265,10 @@
             <div class="credit">Unterblöcke für 1, 2, 4 und 8</div>
 
             <h3>Beispiel:</h3>
-            Ein 16 Bitblock, der somit 11 Bit an Daten speichern kann, soll die binäre Folge 110 1111 0000 gespeichert werden.<br>
-            Diese wird nun in die Bits, die keine <a href="../error-correction.html#parity">Paritätsbits</a> sind, aufgeteilt.<br>
+            Ein 16 Bitblock, der somit 11 Bit an Daten speichern kann, soll die binäre Folge 110 1111 0000 gespeichert
+            werden.<br>
+            Diese wird nun in die Bits, die keine <a href="../error-correction.html#parity">Paritätsbits</a> sind,
+            aufgeteilt.<br>
             <br>
             <table class="hammingCodeTableSmall">
                 <tr>
@@ -268,11 +338,16 @@
 
             <h2>Fehler finden</h2>
 
-            Um den Block nun auf Fehler zu überprüfen zählt man die Anzahl der Bits, die 1 sind, in jedem der Unterblöcke.
-            Sollte die Anzahl gerade sein, so befindet sich kein Fehler in diesem Block.<br> Anderenfalls befindet er sich in diesem Unterblock.<br>
-            Durch die gitterartige Anordnung der Unterblöcke, kann die Position des Bits, welches falsch ist bestimmt werden.
-            Wenn die Position jedoch 0 ist und  das <a href="../error-correction.html#parity">Paritätsbit</a> für den gesamten Block auch 0 ist,<br> liegt kein Fehler in den Nutzdaten vor.<br>
-            Es kann auch herausgefunden werden, ob zwei Fehler vorliegen. Dies ist der Fall wenn der Fehler außerhalb von Position 0 gefunden wurde und die Anzahl der Bits mit Wert 1 im gesamten Block gerade ist.<br>
+            Um den Block nun auf Fehler zu überprüfen zählt man die Anzahl der Bits, die 1 sind, in jedem der
+            Unterblöcke.
+            Sollte die Anzahl gerade sein, so befindet sich kein Fehler in diesem Block.<br> Anderenfalls befindet er
+            sich in diesem Unterblock.<br>
+            Durch die gitterartige Anordnung der Unterblöcke, kann die Position des Bits, welches falsch ist bestimmt
+            werden.
+            Wenn die Position jedoch 0 ist und das <a href="../error-correction.html#parity">Paritätsbit</a> für den
+            gesamten Block auch 0 ist,<br> liegt kein Fehler in den Nutzdaten vor.<br>
+            Es kann auch herausgefunden werden, ob zwei Fehler vorliegen. Dies ist der Fall wenn der Fehler außerhalb
+            von Position 0 gefunden wurde und die Anzahl der Bits mit Wert 1 im gesamten Block gerade ist.<br>
             <br>
             <h3>Beispiel:</h3>
             <br>
@@ -437,7 +512,8 @@
                 </table>
             </div>
             <div class="clearFloat"></div>
-            <div class="credit">Bits, in denen der Fehler noch sein könnte (blau) vor dem Untersuchen und nach Untersuchung der Unterlöcke 1, 2, 4 und 8</div>
+            <div class="credit">Bits, in denen der Fehler noch sein könnte (blau) vor dem Untersuchen und nach
+                Untersuchung der Unterlöcke 1, 2, 4 und 8</div>
             <br>
             <p>Befindet sich der Fehler in Unterblock 1: 7 1er-Bits => Ungerade => Ja</p>
             <p>Befindet sich der Fehler in Unterblock 2: 4 1er-Bits => Gerade => Nein</p>
@@ -446,11 +522,15 @@
             <br>
             <p>Summe aller 1er-Bits: 7 => Ungerade => Nur ein Fehler</p>
             <br>
-            Wechselt man nun den Wert des gefundenen Bits, so erhält man den korrekten Block, in dem sich wieder die Bitfolge: 110 1111 0000 in den Datenbits befindet.
+            Wechselt man nun den Wert des gefundenen Bits, so erhält man den korrekten Block, in dem sich wieder die
+            Bitfolge: 110 1111 0000 in den Datenbits befindet.
 
             <h2>Positionierung der Paritätsbits</h2>
-            Da die Paritätsbits so positioniert sind, dass, wenn man ihre Position binär darstellt, die Position genau ein mal die Ziffer 1 beinhaltet, lässt sich die Suche nach einem Fehler auch einfacher mittels exklusiven Oders (XOR) bestimmen.<br>
-            Hierzu nimmt man die Position aller 1er-Bits und XORt sie in ihrer Binärdarstellung. Man erhält dann die Addresse genau so, wie beim durcharbeiten der verschiedenen Unterblöcke.<br>
+            Da die Paritätsbits so positioniert sind, dass, wenn man ihre Position binär darstellt, die Position genau
+            ein mal die Ziffer 1 beinhaltet, lässt sich die Suche nach einem Fehler auch einfacher mittels exklusiven
+            Oders (XOR) bestimmen.<br>
+            Hierzu nimmt man die Position aller 1er-Bits und XORt sie in ihrer Binärdarstellung. Man erhält dann die
+            Addresse genau so, wie beim durcharbeiten der verschiedenen Unterblöcke.<br>
             <h3>Anhand des oberen Beispiels:</h3>
             <p>0001</p>
             <p>0011</p>
@@ -463,15 +543,23 @@
             <p>1001 (= 9: Position des Fehlers)</p>
 
             <h2>Limitierung der Fehlerkorrekur</h2>
-            Da das Überprüfen der Unterblöcke immer ein Bit als Ergebnis hat, kann höchstens ein Fehler und seine Position gefunden werden, sodass der Fehler wieder korrigiert werden kann.<br>
-            Bei zwei Fehlern kann immerhin noch mittels des <a href="../error-correction.html#parity">Paritätsbits</a> für den gesamten Block festgestellt werden, dass zwei Fehler vorliegen. Dieser kann jedoch nicht mehr korrigiert werden.<br>
-            Sollte es mehr als zwei Fehler in einem Block geben, so funktioniert die Korrektur nicht mehr. Es werden nämlich Fehler an falschen Orten oder gar keine Fehler gefunden. Damit dies jedoch möglichst selten passiert, sollte die Blockgröße nich zu groß werden, um die Wahlscheinlichkeit von vielen Fehlern zu verringern.
+            Da das Überprüfen der Unterblöcke immer ein Bit als Ergebnis hat, kann höchstens ein Fehler und seine
+            Position gefunden werden, sodass der Fehler wieder korrigiert werden kann.<br>
+            Bei zwei Fehlern kann immerhin noch mittels des <a href="../error-correction.html#parity">Paritätsbits</a>
+            für den gesamten Block festgestellt werden, dass zwei Fehler vorliegen. Dieser kann jedoch nicht mehr
+            korrigiert werden.<br>
+            Sollte es mehr als zwei Fehler in einem Block geben, so funktioniert die Korrektur nicht mehr. Es werden
+            nämlich Fehler an falschen Orten oder gar keine Fehler gefunden. Damit dies jedoch möglichst selten
+            passiert, sollte die Blockgröße nich zu groß werden, um die Wahlscheinlichkeit von vielen Fehlern zu
+            verringern.
 
             <h2>Menge der <a href="../error-correction.html#parity">Paritätsdaten</a></h2>
 
-            Die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> k in einem Block der Größe N, wobei N eine Zweierpotenz ist, lässt sich wie folgt berechnen:
+            Die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> k in einem Block der Größe N,
+            wobei N eine Zweierpotenz ist, lässt sich wie folgt berechnen:
             <div class="highlight">k = log<sub>2</sub>(N) + 1</div>
-            Da also die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> sich nur logarithmisch erhöht, steigt der Anteil der Nutzdaten und somit die Effizienz, wenn die Blöcke größer werden.<br><br>
+            Da also die Anzahl der <a href="../error-correction.html#parity">Paritätsbits</a> sich nur logarithmisch
+            erhöht, steigt der Anteil der Nutzdaten und somit die Effizienz, wenn die Blöcke größer werden.<br><br>
             <table>
                 <tr>
                     <th>Blockgröße N</th>
@@ -508,16 +596,32 @@
             ~ Tobias
         </div>
     </main>
-    <footer>
-        <table>
-            <tr>
-                <td>Quellen</td>
-                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
-                <td><a>Lizenz</a></td>
-            </tr>
-        </table>
+    <!-- FOOTER -->
+    <footer class="py-3 absolute-bottom">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="../index/index.html" class="nav-link px-2 text-white">Home</a></li>
+            <li class="nav-item"><a href="../sources/sources.html" class="nav-link px-2 text-white">Quellen</a></li>
+            <li class="nav-item"><a href="https://github.com/brokerwizard/tgi-website-codes/tree/master"
+                    class="nav-link px-2 text-white">Source-Code</a></li>
+            <li class="nav-item"><a href="../impressum/impressum.html" class="nav-link px-2 text-white">Impressum</a>
+            </li>
+        </ul>
+        <p class="text-center text-white">© 2023 FTR</p>
+        <p class="text-center" id="last-edited">Zuletzt bearbeitet: 26.05.2023 ~ Tobias</p>
     </footer>
-    <script src="./hamming-code.js"></script>
+    <!-- LOAD POPPER & BOOSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <!-- LOAD PAGE JS -->
+    <!--<script src="visual.js"></script>-->
+
+    <!-- LINK PAGE CSS -->
     <link rel="stylesheet" href="hamming-code.css">
 </body>
+
 </html>

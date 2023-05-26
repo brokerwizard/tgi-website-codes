@@ -1,5 +1,9 @@
 @import "../../core.css";
 
+.contentPane button {
+    border-radius: 15px;
+}
+
 .qr-code {
     max-width: 200px;
     margin: 10px;

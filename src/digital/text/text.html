@@ -1,60 +1,128 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+    <!-- METADATA -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Textdarstellung</title>
+
+    <!-- TITLE & FAVICON -->
+    <title>Kommazahlen</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="../../images/logo-black.png">
+
+    <!-- LINK BOOSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
+
 <body>
-    <nav>
-        <ul id="navbarList">
-            <!--img-->
-            <li>
-                <a href="#">Nicht technische Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+    <!-- NAVIGATION -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../index/index.html">
+                <img src="../../images/logo-white.png" alt="Codes" width="32" height="32">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-hover="dropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nicht technische Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../non-technical/non-technical.html"><b>Nicht technische Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../../non-technical/braille/braille.html">Blindenschrift</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../../non-technical/dna/dna.html">DNA</a></li>
+                            <li><a class="dropdown-item"
+                                    href="../../non-technical//morse-code/morse-code.html">Morsecode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Visuelle Codes
+                        </a>
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../visual/visual.html"><b>Visuelle
+                                        Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../../visual/qr-code/qr-code.html">QR-Code</a></li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../../visual/bar-code/bar-code.html">Strichcode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Digitale Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../digital/digital.html"><b>Digitale Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../../digital/floating-point/floating-point.html">Kommazahlen</a></li>
+                            <li><a class="dropdown-item" href="../../digital/text/text.html">Textdarstellung</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Fehlerkorrektur
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../../error-correction/error-correction.html"><b>Fehlerkorrektur</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../../error-correction/qr-code/qr-code.html">QR-Code</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../../error-correction/hamming-code/hamming-code.html">Hamming-Code</a></li>
+                            <li><a class="dropdown-item" href="../../error-correction/raid/raid.html">RAID</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#">Visuelle Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Digitale Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="./hamming-codes/hamming-codes.html">Fehlerkorrekur</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
+
+    <!-- MAIN -->
     <main>
         <!--content goes here-->
-        <div class="contentPane">
+        <div class="contentPane container px-4 text-left">
             <h1>Text</h1>
-            Da wir typischerweise Sprache/Schrift, mit ihren verschiedenen Buchstaben und Zeichen, benutzen um Sachverhalte darzustellen ist es nötig, dass Computer diese speichern und mit ihnen arbeiten können.
+            Da wir typischerweise Sprache/Schrift, mit ihren verschiedenen Buchstaben und Zeichen, benutzen um
+            Sachverhalte darzustellen ist es nötig, dass Computer diese speichern und mit ihnen arbeiten können.
             Computer arbeiten jedoch nur mit wahr/falsch bzw. Zahlen, weshalb es hierfür notwendig ist Codes zu haben.
 
             <h2>ASCII</h2>
-            ASCII (American Standard Code for Information Interchange) gilt als die Grundlage für die meisten Textcodierungen.<br>
-            Er weist den 7-bit langen Zahlen, also 2<sup>7</sup> = 128 Werten, Zeichen, die im amerikanischen Raum verwendet wurden zu.
-            Dies sind Groß- und Kleinbuchstaben, Satzzeichen, sowie einfache Sonderzeichen und Steuerungscodes, die zur Koordination des Datenverkehrs verwendet wurden bzw. verwendet werden können.<br>
+            ASCII (American Standard Code for Information Interchange) gilt als die Grundlage für die meisten
+            Textcodierungen.<br>
+            Er weist den 7-bit langen Zahlen, also 2<sup>7</sup> = 128 Werten, Zeichen, die im amerikanischen Raum
+            verwendet wurden zu.
+            Dies sind Groß- und Kleinbuchstaben, Satzzeichen, sowie einfache Sonderzeichen und Steuerungscodes, die zur
+            Koordination des Datenverkehrs verwendet wurden bzw. verwendet werden können.<br>
             Überblick:<br>
             <br>
             <img src="../../images/ASCII_table.png" width="30%">
@@ -63,22 +131,30 @@
             Wie man jedoch sieht fehlen bereits für die deutsche Sprache Buchstaben, wie Ä, ä und ß.
 
             <h3>Erweiterung</h3>
-            Weil das klassische ASCII nur 7 der 8 Bit in einem Byte nutzt wurden verschiedene Erweiterungen eingeführt, um weitere im normalen ASCII fehlenden Zeichen darstellen zu können.
-            Hierbei wurden jedoch so unterschiedliche Variationen erschaffen, dass es keine allgemeine ASCII-Erweiterung gibt.
+            Weil das klassische ASCII nur 7 der 8 Bit in einem Byte nutzt wurden verschiedene Erweiterungen eingeführt,
+            um weitere im normalen ASCII fehlenden Zeichen darstellen zu können.
+            Hierbei wurden jedoch so unterschiedliche Variationen erschaffen, dass es keine allgemeine ASCII-Erweiterung
+            gibt.
 
             <h2>Unicode</h2>
             Um das Problem der fehlenden Zeichen zu beheben entstand der Unicode-Standard.
-            Das Ziel hierbei ist es möglichst alle Zeichen, was neben Buchstaben, Schriftzeichen und Sonderzeichen auch Symbole, wie Emojis beinhaltet.
+            Das Ziel hierbei ist es möglichst alle Zeichen, was neben Buchstaben, Schriftzeichen und Sonderzeichen auch
+            Symbole, wie Emojis beinhaltet.
             Die Zeichen wurden Zahlenwerten zugewiesen, sodass man mit den Zahlenwerten diese repräsentieren kann.<br>
-            Standardmäßig gibt man die Codes der Zeichen hexadezimal, mit einer Mindestlänge von 4 Ziffern, an. Um zu makieren, dass es sich um ein Unicodesymbol handelt, wird der Präfix "U+" verwendet.<br>
+            Standardmäßig gibt man die Codes der Zeichen hexadezimal, mit einer Mindestlänge von 4 Ziffern, an. Um zu
+            makieren, dass es sich um ein Unicodesymbol handelt, wird der Präfix "U+" verwendet.<br>
             U+00DF entspricht "ß".<br>
-            Die ersten 128 Zeichen sind denen aus ASCII gleich. Dannach wurden einfach die Zeichen chronologisch angehängt.<br>
+            Die ersten 128 Zeichen sind denen aus ASCII gleich. Dannach wurden einfach die Zeichen chronologisch
+            angehängt.<br>
             <br>
-            Unicode bestand in seiner ersten Version aus etwa 7.000 Zeichen aus 24 Schriftsystemen. Inzwischen ist dies auf knapp 150.000 Zeichen aus über 160 Schriftsystemen angewachsen.<br>
-            Unicode selbst bietet jedoch keine direkte Codierung an, weshalb es hierfür in anderen Systemen implementiert wurde.
+            Unicode bestand in seiner ersten Version aus etwa 7.000 Zeichen aus 24 Schriftsystemen. Inzwischen ist dies
+            auf knapp 150.000 Zeichen aus über 160 Schriftsystemen angewachsen.<br>
+            Unicode selbst bietet jedoch keine direkte Codierung an, weshalb es hierfür in anderen Systemen
+            implementiert wurde.
 
             <h2>UTF</h2>
-            Das UTF (Unicode Transformation Format) implementiert die Darstellung von Unicode Zeichen für den Computer in Bytes.<br>
+            Das UTF (Unicode Transformation Format) implementiert die Darstellung von Unicode Zeichen für den Computer
+            in Bytes.<br>
             Es gibt hierbei drei verschiedene bekannte Formate:
             <ul>
                 <li>UTF-8</li>
@@ -88,23 +164,34 @@
             Die Zahl gibt jeweils die Mindestlänge eines Zeichens in Bit an.
 
             <h3>UTF-32</h3>
-            Im UTF-32 könnten auf den 4 Byte 2<sup>32</sup> = 4.294.967.296 Zeichen darstellen, während es in Unicode nur etwa 160.000 Zeichen gibt, sodass in dieser Darstellung einfach die Unicodewerte der Zeichen gespeichert werden können.
-            Da jedoch immer auf 4 Byte aufgefüllt werden muss, wird gegenüber UTF-16 häufig fast das doppelte an Speicher benötigt.
+            Im UTF-32 könnten auf den 4 Byte 2<sup>32</sup> = 4.294.967.296 Zeichen darstellen, während es in Unicode
+            nur etwa 160.000 Zeichen gibt, sodass in dieser Darstellung einfach die Unicodewerte der Zeichen gespeichert
+            werden können.
+            Da jedoch immer auf 4 Byte aufgefüllt werden muss, wird gegenüber UTF-16 häufig fast das doppelte an
+            Speicher benötigt.
 
             <h3>UTF-16</h3>
             UFT-16 erlaubt es 2 oder 4 Byte für ein Zeichen zu verwenden.<br>
             Werden 2 Byte verwendet, so wird einfach der Unicodewert des Zeichens in diesen zwei Byte gespeichert.<br>
             Genügen diese 2 Byte nicht, so werden 4 Byte verwendet.
-            Der Unicodewert wird hierbei auf 20 Bit (2<sup>20</sup> = 1.048.576 > 160.000) aufgeteilt, wovon 10 in den ersten 2 Byte und 10 in den zweiten 2 Byte gespeichert werden.
-            Um die Zusammengehörigkeit zu signalisieren wird den 10 Bit des ersten Byte 110110 und vor den 10 Bit des Zweiten 110111 gespeichert.<br>
-            Der Notenschlüssel 𝄞 Unicode: U+1D11E wird also als <div class="blue">110110</div><div class="yellow">00 01010011</div> <div class="blue">110111</div><div class="green">11 01011100</div> dargestellt.
+            Der Unicodewert wird hierbei auf 20 Bit (2<sup>20</sup> = 1.048.576 > 160.000) aufgeteilt, wovon 10 in den
+            ersten 2 Byte und 10 in den zweiten 2 Byte gespeichert werden.
+            Um die Zusammengehörigkeit zu signalisieren wird den 10 Bit des ersten Byte 110110 und vor den 10 Bit des
+            Zweiten 110111 gespeichert.<br>
+            Der Notenschlüssel 𝄞 Unicode: U+1D11E wird also als <div class="blue">110110</div>
+            <div class="yellow">00 01010011</div>
+            <div class="blue">110111</div>
+            <div class="green">11 01011100</div> dargestellt.
             <div class="credit">Blau: Start-/Endmarkierung; Gelb: erste 10 Bit; Grün: zweite 10 Bit</div>
 
             <h3>UTF-8</h3>
             UTF ermöglicht es noch dynamischere Längen von 1, 2, 3 oder 4 Byte zu verwenden.<br>
-            Ein ASCII-Symbol wird einfach in einem Byte gespeichert. Die 0, mit der jedes ASCII-Byte beginnt, gibt an, dass der Block für das Zeichen nur ein Byte lang ist.<br>
-            Handelt es sich nicht um ein ASCII-Symbol, werden mehrere Byte benötigt. Das erste Byte beginnt hierbei mit 11, um den Anfang des Blocks zu signalisieren. Die folgenden Bytes beginnen mit 10.
-            Der Präfix des ersten Bytes erstreckt sich jedoch über die ersten zwei Bit. Denn es werden so viele Einsen verwenden, wie der Speicherblock lang ist, gefolgt von einer 0.<br>
+            Ein ASCII-Symbol wird einfach in einem Byte gespeichert. Die 0, mit der jedes ASCII-Byte beginnt, gibt an,
+            dass der Block für das Zeichen nur ein Byte lang ist.<br>
+            Handelt es sich nicht um ein ASCII-Symbol, werden mehrere Byte benötigt. Das erste Byte beginnt hierbei mit
+            11, um den Anfang des Blocks zu signalisieren. Die folgenden Bytes beginnen mit 10.
+            Der Präfix des ersten Bytes erstreckt sich jedoch über die ersten zwei Bit. Denn es werden so viele Einsen
+            verwenden, wie der Speicherblock lang ist, gefolgt von einer 0.<br>
             <br>
             <table>
                 <tr>
@@ -145,20 +232,39 @@
             </table>
             <div class="credit">x: Bits für die Speicherung des Unicodes; 1/0 feste Bits</div>
             <br>
-            Da bei UTF-8 die Länge dynamisch ist, ist dies meist der effinzienteste Code und wid daher auch am häufigsten zur Textspeicherung verwendet.
+            Da bei UTF-8 die Länge dynamisch ist, ist dies meist der effinzienteste Code und wid daher auch am
+            häufigsten zur Textspeicherung verwendet.
             <br><br>~ Tobias
         </div>
     </main>
-    <footer>
-        <table>
-            <tr>
-                <td>Quellen</td>
-                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
-                <td><a>Lizenz</a></td>
-            </tr>
-        </table>
+    <!-- FOOTER -->
+    <footer class="py-3 absolute-bottom">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="../index/index.html" class="nav-link px-2 text-white">Home</a></li>
+            <li class="nav-item"><a href="../sources/sources.html" class="nav-link px-2 text-white">Quellen</a></li>
+            <li class="nav-item"><a href="https://github.com/brokerwizard/tgi-website-codes/tree/master"
+                    class="nav-link px-2 text-white">Source-Code</a></li>
+            <li class="nav-item"><a href="../impressum/impressum.html" class="nav-link px-2 text-white">Impressum</a>
+            </li>
+        </ul>
+        <p class="text-center text-white">© 2023 FTR</p>
+        <p class="text-center" id="last-edited">Zuletzt bearbeitet: 26.05.2023 ~ Tobias</p>
     </footer>
-    <script src="./text.js"></script>
+
+    <!-- LOAD POPPER & BOOSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+
+    <!-- LOAD PAGE JS -->
+    <!--<script src="floating-point.js"></script>-->
+
+    <!-- LINK PAGE CSS -->
     <link rel="stylesheet" href="text.css">
 </body>
+
 </html>

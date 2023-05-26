@@ -1,65 +1,133 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+    <!-- METADATA -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR-Code</title>
+
+    <!-- TITLE & FAVICON -->
+    <title>QR-Codes</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="../images/logo-black.png">
+
+    <!-- LINK BOOSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
+
 <body>
-    <nav>
-        <ul id="navbarList">
-            <!--img-->
-            <li>
-                <a href="#">Nicht technische Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
+    <!-- NAVIGATION -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index/index.html">
+                <img src="../images/logo-white.png" alt="Codes" width="32" height="32">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-hover="dropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Nicht technische Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../non-technical/non-technical.html"><b>Nicht technische Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../non-technical/braille/braille.html">Blindenschrift</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../non-technical/dna/dna.html">DNA</a></li>
+                            <li><a class="dropdown-item"
+                                    href="../non-technical//morse-code/morse-code.html">Morsecode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Visuelle Codes
+                        </a>
+                        <ul class="dropdown-menu ">
+                            <li><a class="dropdown-item" id="navbar-title-name" href="../visual/visual.html"><b>Visuelle
+                                        Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../visual/qr-code/qr-code.html">QR-Code</a></li>
+                            <li><a class="dropdown-item" aria-current="page"
+                                    href="../visual/bar-code/bar-code.html">Strichcode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Digitale Codes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../digital/digital.html"><b>Digitale Codes</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../digital/floating-point/floating-point.html">Kommazahlen</a></li>
+                            <li><a class="dropdown-item" href="../digital/text/text.html">Textdarstellung</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Fehlerkorrektur
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="navbar-title-name"
+                                    href="../error-correction/error-correction.html"><b>Fehlerkorrektur</b></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../error-correction/qr-code/qr-code.html">QR-Code</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="../error-correction/hamming-code/hamming-code.html">Hamming-Code</a></li>
+                            <li><a class="dropdown-item" href="../error-correction/raid/raid.html">RAID</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#">Visuelle Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Digitale Codes</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>
-                <a href="./hamming-codes/hamming-codes.html">Fehlerkorrekur</a>
-                <ul class="dropdown">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
     <main>
         <!--content goes here-->
-        <div class="contentPane">
+        <div class="contentPane container px-4 text-left">
             <h1>Fehlerkorrekur in QR-Codes</h1>
-            In <a href="../../visual/qr-code.html">QR-Codes</a> wird Fehlerkorrekur verwendet, um sie gegen Verschmutzungen oder andere kleinere Beschädigungen widerständig zu machen.<br>
-            Auch wird es dadurch möglich Logos oder ähliches im QR-Code zu platzieren, da beim Scannen die dadurch fehlenden Daten ersetzt werden können.<br>
-            Zur Fehlerkorrekur wird der <a href="#reed-solomon">Reed-Solomon Code</a> verwendet. Die entstandenen Fehlerkorrekurdaten werden nach dem Ende der gespeicherten nutzdaten im Datenbereich des QR-Codes gespeichert.<br>
+            In <a href="../../visual/qr-code.html">QR-Codes</a> wird Fehlerkorrekur verwendet, um sie gegen
+            Verschmutzungen oder andere kleinere Beschädigungen widerständig zu machen.<br>
+            Auch wird es dadurch möglich Logos oder ähliches im QR-Code zu platzieren, da beim Scannen die dadurch
+            fehlenden Daten ersetzt werden können.<br>
+            Zur Fehlerkorrekur wird der <a href="#reed-solomon">Reed-Solomon Code</a> verwendet. Die entstandenen
+            Fehlerkorrekurdaten werden nach dem Ende der gespeicherten nutzdaten im Datenbereich des QR-Codes
+            gespeichert.<br>
             <br>
             <img src="../../images/schoolhomepageQR.png" alt="">
             <div class="credit">QR-Code zur Schulwebsite, in dem sich das Schullogo befindet</div>
 
             <h2>Fehlerkorrekur-Levels</h2>
-            Im QR-Code Standart gibt es verschiedene Fehlerkorrekur-Level, was bedeutet, dass verschieden viele <a href="../error-correction.html#parity">Paritätsdaten</a>, verwendet und somit auch verschieden viele Fehler korrigiert werden können.<br>
+            Im QR-Code Standart gibt es verschiedene Fehlerkorrekur-Level, was bedeutet, dass verschieden viele <a
+                href="../error-correction.html#parity">Paritätsdaten</a>, verwendet und somit auch verschieden viele
+            Fehler korrigiert werden können.<br>
             <br>
             <img src="../../images/qr-code_positioning.png"><br>
-            An den lila markierten Positionen wird gespeichet, welches Fehlerkorrekur-Level verwendet wird, als Pixelpaar codiert. Diese Paar wird doppelt (links, unten) gespeichert, um es gegen Beschädigungen resistenter zu machen.
+            An den lila markierten Positionen wird gespeichet, welches Fehlerkorrekur-Level verwendet wird, als
+            Pixelpaar codiert. Diese Paar wird doppelt (links, unten) gespeichert, um es gegen Beschädigungen
+            resistenter zu machen.
             Das Paar wird von links nach rechts bzw. von unten nach oben gelesen<br>
             <br>
             <table>
@@ -90,43 +158,76 @@
                 </tr>
             </table>
 
-            Wiederherstellungsrate meint den Anteil der Daten, der maximal beschädigt sein darf, um die Daten wieder zu reparieren.<br>
+            Wiederherstellungsrate meint den Anteil der Daten, der maximal beschädigt sein darf, um die Daten wieder zu
+            reparieren.<br>
             <br>
             <div class="imageCluster">
-                <img src="../../images/qr-code_example_l.png" alt="QR-Code Korrekturlevel L" title="Fehlerkorrekur-Level L"></img>
-                <img src="../../images/qr-code_example_m.png" alt="QR-Code Korrekturlevel M" title="Fehlerkorrekur-Level M"></img>
-                <img src="../../images/qr-code_example_q.png" alt="QR-Code Korrekturlevel Q" title="Fehlerkorrekur-Level Q"></img>
-                <img src="../../images/qr-code_example_h.png" alt="QR-Code Korrekturlevel H" title="Fehlerkorrekur-Level H"></img>
+                <img src="../../images/qr-code_example_l.png" alt="QR-Code Korrekturlevel L"
+                    title="Fehlerkorrekur-Level L"></img>
+                <img src="../../images/qr-code_example_m.png" alt="QR-Code Korrekturlevel M"
+                    title="Fehlerkorrekur-Level M"></img>
+                <img src="../../images/qr-code_example_q.png" alt="QR-Code Korrekturlevel Q"
+                    title="Fehlerkorrekur-Level Q"></img>
+                <img src="../../images/qr-code_example_h.png" alt="QR-Code Korrekturlevel H"
+                    title="Fehlerkorrekur-Level H"></img>
             </div>
             <div class="credit">QR-Codes, die dem Text "Example", mit den Korrekturleveln L, M, Q, H</div>
             <br>
-            Bei diesen Beispiel QR-Codes kann man die verschiedenen Kombinationen der Pixelpaare, welche das Fehlerkorrekur-Level angeben sehen.
+            Bei diesen Beispiel QR-Codes kann man die verschiedenen Kombinationen der Pixelpaare, welche das
+            Fehlerkorrekur-Level angeben sehen.
             Auch fällt auf, dass der Code mit Level H größer (die einzelnen Pixel werden kleiner) als die Anderen ist.
-            Dies liegt daran, dass hier so viele <a href="../error-correction.html#parity">Paritätsdaten</a> an die Nachricht angehängt wurden, dass sie nicht mehr in einen 21x21 QR-Code passen, sondern ein 23x23 QR-Code benötigt wird.
+            Dies liegt daran, dass hier so viele <a href="../error-correction.html#parity">Paritätsdaten</a> an die
+            Nachricht angehängt wurden, dass sie nicht mehr in einen 21x21 QR-Code passen, sondern ein 23x23 QR-Code
+            benötigt wird.
 
 
             <h2 id="reed-solomon">Reed-Solomon Code</h2>
-            Der Reed-Solomon Code ist ein fehlerkorigirender Code, der mittels der Polynominterpolation über die Daten funktioniert.<br>
-            Er nutzt es aus, dass für n Datenpunkte es genau eine Polynomfunktion n-1ten Grades gibt, die all diese schneidet. Von dieser Funktion werden eine beliebige Anzahl (k) weiterer Datenwerte abgelesen und als Paritätsdaten verwendet.
-            Sind nun Datenpunkte verloren gegangen können sie wiederhergestellt werden, solange noch mindestens n der n + k Datenpunkte vorhanden sind. Dann kann auf diese n Datenpunkte erneut die Polynomfunktion interpoliert werden.
-            Aus dieser Funktion können dann die verloren gegangen Daten wieder abglesen werden. Es dürfen somit höchstens k Datenpunkte verloren gehen, was aber auch bedeutet, dass, wenn man mehr zusätzliche Punkte wählt, mehr Fehler korrigiert werden können.
-            Hierdurch kommen die verschiedenen Fehlerkorrekur-Levels zustande, denn es werden je nach Level größere oder kleinere Werte für k verwendet.<br>
-            Für gewöhnlich werden für die Positionen der Polynomfunktion, an der sich die Datenwerte befinden ganze Zahnlen (0; 1; 2; ...) verwendet.
-            
+            Der Reed-Solomon Code ist ein fehlerkorigirender Code, der mittels der Polynominterpolation über die Daten
+            funktioniert.<br>
+            Er nutzt es aus, dass für n Datenpunkte es genau eine Polynomfunktion n-1ten Grades gibt, die all diese
+            schneidet. Von dieser Funktion werden eine beliebige Anzahl (k) weiterer Datenwerte abgelesen und als
+            Paritätsdaten verwendet.
+            Sind nun Datenpunkte verloren gegangen können sie wiederhergestellt werden, solange noch mindestens n der n
+            + k Datenpunkte vorhanden sind. Dann kann auf diese n Datenpunkte erneut die Polynomfunktion interpoliert
+            werden.
+            Aus dieser Funktion können dann die verloren gegangen Daten wieder abglesen werden. Es dürfen somit
+            höchstens k Datenpunkte verloren gehen, was aber auch bedeutet, dass, wenn man mehr zusätzliche Punkte
+            wählt, mehr Fehler korrigiert werden können.
+            Hierdurch kommen die verschiedenen Fehlerkorrekur-Levels zustande, denn es werden je nach Level größere oder
+            kleinere Werte für k verwendet.<br>
+            Für gewöhnlich werden für die Positionen der Polynomfunktion, an der sich die Datenwerte befinden ganze
+            Zahnlen (0; 1; 2; ...) verwendet.
+
 
             <br><br>~ Tobias
         </div>
     </main>
-    <footer>
-        <table>
-            <tr>
-                <td>Quellen</td>
-                <td><a href="https://github.com/brokerwizard/tgi-website-codes-html">Source code</a></td>
-                <td><a>Lizenz</a></td>
-            </tr>
-        </table>
+    <!-- FOOTER -->
+    <footer class="py-3 absolute-bottom">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="../index/index.html" class="nav-link px-2 text-white">Home</a></li>
+            <li class="nav-item"><a href="../sources/sources.html" class="nav-link px-2 text-white">Quellen</a></li>
+            <li class="nav-item"><a href="https://github.com/brokerwizard/tgi-website-codes/tree/master"
+                    class="nav-link px-2 text-white">Source-Code</a></li>
+            <li class="nav-item"><a href="../impressum/impressum.html" class="nav-link px-2 text-white">Impressum</a>
+            </li>
+        </ul>
+        <p class="text-center text-white">© 2023 FTR</p>
+        <p class="text-center" id="last-edited">Zuletzt bearbeitet: 26.05.2023 ~ Tobias</p>
     </footer>
-    <script src="./qr-code.js"></script>
+    <!-- LOAD POPPER & BOOSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <!-- LOAD PAGE JS -->
+    <!--<script src="visual.js"></script>-->
+
+    <!-- LINK PAGE CSS -->
     <link rel="stylesheet" href="qr-code.css">
 </body>
+
 </html>
