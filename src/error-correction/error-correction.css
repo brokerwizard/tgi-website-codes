@@ -8,6 +8,7 @@ main table {
 
 main table td, main table th {
     border: 1px solid white;
+    text-align: center;
 }
 
 main ul {

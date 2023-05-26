@@ -1,1 +1,19 @@
 @import "../core.css";
+
+#tableContent a {
+    color: white;
+    text-decoration: none;
+}
+
+#tableContent {
+    width: 80%;
+}
+
+#tableContent td, #tableContent th {
+    width: 25%;
+    padding-bottom: 12px;
+}
+
+#tableContent th {
+    text-decoration: underline;
+}

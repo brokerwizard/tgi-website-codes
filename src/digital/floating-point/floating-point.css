@@ -11,15 +11,13 @@ main table {
     border-collapse: collapse;
 }
 
-main table td {
+main table td, main table th {
     width: 5%;
     border: 1px solid white;
     text-align: center;
 }
 
 main table th {
-    width: 10%;
-    border: 1px solid white;
     border-bottom-width: 3px;
 }
 
