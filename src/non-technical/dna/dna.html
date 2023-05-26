@@ -98,15 +98,46 @@
                     <th>Binärcode</th>
                 </tr>
                 <tr>
-                    <td><input type="text" maxlength="1" class="table11"></td>
-                    <td><input type="text" maxlength="1" class="table12"></td>
-                    <td><input type="text" maxlength="1" class="table13"></td>
-                    <td><input type="text" maxlength="1" class="table14"></td>
-                    <td><input type="text" maxlength="6" class="table10"></td>
+                    <td>
+                        <select id="tableBase0">
+                            <option value="-">-</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="tableHelix0">
+                            <option value="-">-</option>
+                            <option value="A">A</option>
+                            <option value="T">T</option>
+                            <option value="C">C</option>
+                            <option value="G">G</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="tableBase1">
+                            <option value="-">-</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="tableHelix1">
+                            <option value="-">-</option>
+                            <option value="A">A</option>
+                            <option value="T">T</option>
+                            <option value="C">C</option>
+                            <option value="G">G</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" maxlength="6" id="tableCode">
+                    </td>
                 </tr>
             </table>
-            <button id="genDNA1" onclick="">Generiere DNA Darstellung</button>
-            <button id="genBin1">Generiere binäre Darstellung</button>
+            <button id="genDNA1" onclick="genDNA()">Generiere DNA Darstellung</button>
+            <button id="genBin1" onclick="genBin()">Generiere binäre Darstellung</button>
+            <div id="genStatus"></div>
             <br>
             Man könnte also sagen, dass man die DNA als Speichermedium in der 
             Digitaltechnik verwenden kann. Hierbei stellen sich ein paar Fragen:<br>
